@@ -520,7 +520,7 @@
             "relationships": {},
             "assessments": {}
           },
-          "lastUpdate": "2026-11-20T14:39:01.069Z"
+          "lastUpdate": "2026-11-20T14:40:56.671Z"
         }
       ],
       "GUINoCodeDiagram": [
@@ -1905,7 +1905,7 @@
       }
     }
   },
-  "exportedAt": "2026-11-20T14:39:01.073Z",
+  "exportedAt": "2026-11-20T14:40:56.674Z",
   "version": "2.0.0",
   "editorVersion": "8.9.4"
 }
