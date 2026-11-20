@@ -22,28 +22,29 @@
   --tracker-slate: #64748b;
 }
 /* One application-wide typeface and a light neutral canvas on every screen. */
-html, body, #root, .app-container, .ds-page { background: var(--ds-background); color: var(--ds-text); font-family: var(--ds-font); }
+html, body, #root, .app-container, .ds-page { background-color: var(--ds-background); color: var(--ds-text); font-family: var(--ds-font); }
 .app-container :is(button, input, select, textarea, table, a) { font-family: inherit; }
-.ds-nav { position: sticky; top: 0; z-index: 10; background: var(--ds-surface); border-color: var(--ds-border); box-shadow: var(--ds-shadow); }
+.ds-nav { position: sticky; top: 0; z-index: 10; background-color: var(--ds-surface); border-color: var(--ds-border); box-shadow: var(--ds-shadow); }
 .tracker-nav-inner, .tracker-nav-links, .tracker-list-heading, .tracker-hero-content { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-lg); }
 .tracker-brand { font-size: 1.15rem; font-weight: 750; color: var(--ds-primary); white-space: nowrap; }
 .tracker-nav-links { gap: var(--ds-space-md); flex-wrap: wrap; }
 .tracker-nav-link { color: var(--ds-muted); text-decoration: none; font-weight: 600; padding: .55rem .75rem; border-radius: var(--ds-radius); }
-.tracker-nav-link:hover, .tracker-nav-link.active { color: var(--ds-primary); background: color-mix(in srgb, var(--ds-primary) 12%, var(--ds-surface)); }
+.tracker-nav-link:hover, .tracker-nav-link.active { color: var(--ds-primary); background-color: color-mix(in srgb, var(--ds-primary) 12%, var(--ds-surface)); }
 .tracker-main { padding-top: var(--ds-space-lg); padding-bottom: calc(var(--ds-space-lg) * 2); }
 .tracker-section { padding: var(--ds-space-lg) 0 0; }
 .tracker-section-heading { margin-bottom: var(--ds-space-md); }
 .tracker-section-heading p, .tracker-muted { color: var(--ds-muted); margin: 0; }
 .ds-heading { font-family: var(--ds-font-heading); color: var(--ds-text); }
-.ds-hero.tracker-hero { background: linear-gradient(120deg, var(--tracker-indigo), var(--tracker-sky)); padding: calc(var(--ds-space-lg) * 1.5); border-radius: var(--ds-radius); box-shadow: var(--ds-shadow); }
+.ds-hero.tracker-hero { background-image: linear-gradient(120deg, var(--tracker-indigo), var(--tracker-sky)); padding: calc(var(--ds-space-lg) * 1.5); border-radius: var(--ds-radius); box-shadow: var(--ds-shadow); color: var(--ds-surface); }
 .tracker-hero-content { align-items: flex-end; }
 .tracker-hero p { margin: var(--ds-space-md) 0; }
-.tracker-hero-action { flex-shrink: 0; background: var(--ds-surface); color: var(--ds-primary); border-color: var(--ds-surface); margin-left: var(--ds-space-lg); }
+.tracker-hero-action.ds-btn-primary { flex-shrink: 0; background-color: var(--ds-surface); color: var(--ds-primary); border-color: var(--ds-surface); margin-left: var(--ds-space-lg); }
+.tracker-hero-action.ds-btn-primary:hover { background-color: var(--ds-surface); color: var(--ds-primary); }
 .tracker-total { display: flex; align-items: center; gap: var(--ds-space-md); margin-top: var(--ds-space-lg); }
 .tracker-total strong { font-size: 2.75rem; line-height: 1; }
 .tracker-category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--ds-space-md); }
-.ds-card, .ds-kpi { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius); box-shadow: var(--ds-shadow); padding: var(--ds-space-lg); transition: transform .2s, box-shadow .2s; }
-.ds-card:hover, .ds-kpi:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30,41,59,.11); }
+.ds-card, .ds-kpi { background-color: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius); box-shadow: var(--ds-shadow); padding: var(--ds-space-lg); transition: transform .2s, box-shadow .2s; }
+.ds-card:hover, .ds-kpi:hover { transform: translateY(-3px); box-shadow: 0 12px 28px color-mix(in srgb, var(--ds-text) 11%, transparent); }
 .tracker-category-card { display: block; text-decoration: none; color: var(--ds-text); }
 .tracker-category-card:focus-visible, .tracker-nav-link:focus-visible { outline: 2px solid var(--ds-primary); outline-offset: 3px; }
 .tracker-category-card:nth-child(7n+1) { --category-color: var(--tracker-indigo); }
@@ -53,6 +54,17 @@ html, body, #root, .app-container, .ds-page { background: var(--ds-background); 
 .tracker-category-card:nth-child(7n+5) { --category-color: var(--tracker-coral); }
 .tracker-category-card:nth-child(7n+6) { --category-color: var(--tracker-violet); }
 .tracker-category-card:nth-child(7n+7) { --category-color: var(--tracker-slate); }
+.tracker-table .table-scroll { overflow-x: auto; }
+.tracker-table table { min-width: 750px; }
+.tracker-table td:last-child, .tracker-table th:last-child { min-width: 145px !important; width: 145px !important; max-width: none !important; }
+.tracker-table td:last-child > div { gap: var(--ds-space-md) !important; }
+.tracker-table td:last-child button { color: var(--ds-primary); gap: calc(var(--ds-space-md) / 4); white-space: nowrap; }
+.tracker-table td:last-child button[title="Delete"] { color: var(--tracker-coral); }
+.tracker-table td:last-child button:focus-visible { outline: 2px solid var(--ds-primary); }
+.bsr-modal { border: 1px solid var(--ds-border); font-family: var(--ds-font); }
+.bsr-modal :is(input, select) { font-family: var(--ds-font); }
+.bsr-modal button[type="submit"] { background-color: var(--ds-primary) !important; color: var(--ds-surface) !important; }
+.bsr-modal :is(input, select):focus-visible { outline: 2px solid var(--ds-primary); }
 .tracker-category-icon { display: block; font-size: 2rem; }
 .tracker-category-card h3 { margin: .5rem 0; }
 .tracker-category-count { display: block; color: var(--category-color); font-size: 2rem; line-height: 1.2; }
@@ -68,7 +80,7 @@ html, body, #root, .app-container, .ds-page { background: var(--ds-background); 
 .tracker-form-section { max-width: 780px; margin: auto; }
 .tracker-form { margin-top: var(--ds-space-lg); }
 .tracker-form textarea.ds-input { resize: vertical; }
-.ds-btn-primary { background: var(--ds-primary); border-color: var(--ds-primary); color: var(--ds-surface); }
+.ds-btn-primary { background-color: var(--ds-primary); border-color: var(--ds-primary); color: var(--ds-surface); }
 .ds-btn, .ds-input { border-radius: calc(var(--ds-radius) / 2); font-family: var(--ds-font); }
 .tracker-table { font-family: var(--ds-font); }
 /* Runtime widgets and native form controls inherit the same typeface as the page. */

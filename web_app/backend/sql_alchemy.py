@@ -65,11 +65,8 @@ class RecommendationCategory(enum.Enum):
     Film = "Film"
     Place = "Place"
     Article = "Article"
-    Restaurant = "Restaurant"
-    Podcast = "Podcast"
-    Product = "Product"
     Recipe = "Recipe"
-    App = "App"
+    Restaurant = "Restaurant"
     Other = "Other"
 
 class RecommendationStatus(enum.Enum):
@@ -86,11 +83,11 @@ class Recommendation(Base):
     # The primary key is persistence infrastructure, not a declared domain attribute.
     __table_args__ = (Column_("id", Integer_, primary_key=True),)
     id = __table_args__[0]
-    title: Mapped_[str] = mapped_column(String_(100))
-    category: Mapped_[RecommendationCategory] = mapped_column(Enum(RecommendationCategory))
-    status: Mapped_[RecommendationStatus] = mapped_column(Enum(RecommendationStatus))
+    title: Mapped_[str] = mapped_column(String_(100), nullable=False)
+    category: Mapped_[RecommendationCategory] = mapped_column(Enum(RecommendationCategory), nullable=False)
+    status: Mapped_[RecommendationStatus] = mapped_column(Enum(RecommendationStatus), nullable=False)
     note: Mapped_[Optional_[str]] = mapped_column(String_(100), nullable=True)
-    added_on: Mapped_[dt_date] = mapped_column(Date_)
+    added_on: Mapped_[dt_date] = mapped_column(Date_, nullable=False)
 
 
 # Database connection (override the default with the DATABASE_URL environment variable)

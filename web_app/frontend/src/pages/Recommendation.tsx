@@ -7,13 +7,13 @@ import { BarChartComponent } from "../components/charts/BarChartComponent";
 import { backendUrl } from "../components/runtime/bindingData";
 import { useDataVersion } from "../components/runtime/dataVersion";
 
-type Category = "Book" | "Film" | "Place" | "Article" | "Restaurant" | "Podcast" | "Product" | "Recipe" | "App" | "Other";
+type Category = "Book" | "Film" | "Place" | "Article" | "Recipe" | "Restaurant" | "Other";
 type Status = "ToTry" | "Done" | "Dropped";
 type RecordItem = { id: number; title: string; category: Category; status: Status; note: string | null; added_on: string };
-const categories: Category[] = ["Book", "Film", "Place", "Article", "Restaurant", "Podcast", "Product", "Recipe", "App", "Other"];
+const categories: Category[] = ["Book", "Film", "Place", "Article", "Recipe", "Restaurant", "Other"];
 const statuses: Status[] = ["ToTry", "Done", "Dropped"];
-const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Restaurant: "🍽️", Podcast: "🎙️", Product: "🎁", Recipe: "🍲", App: "📱", Other: "✨" };
-const categoryColors: Record<Category, string> = { Book: "var(--tracker-indigo)", Film: "var(--tracker-sky)", Place: "var(--tracker-teal)", Article: "var(--tracker-amber)", Restaurant: "var(--tracker-violet)", Podcast: "var(--tracker-coral)", Product: "var(--tracker-slate)", Recipe: "var(--tracker-coral)", App: "var(--tracker-sky)", Other: "var(--tracker-slate)" };
+const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Recipe: "🍲", Restaurant: "🍽️", Other: "✨" };
+const chartColorProperties: Record<Category, string> = { Book: "--tracker-indigo", Film: "--tracker-sky", Place: "--tracker-teal", Article: "--tracker-amber", Recipe: "--tracker-coral", Restaurant: "--tracker-violet", Other: "--tracker-slate" };
 const tableOptions = {
   showHeader: true, stripedRows: false, showPagination: true, rowsPerPage: 5,
   actionButtons: true, hideCreateButton: true,
@@ -57,8 +57,13 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
   const category = searchParams.get("category") || "";
   const [status, setStatus] = useState("");
   const { rows, loading, error } = useRecommendations();
+  const chartColors = useMemo(() => {
+    if (typeof window === "undefined") return {};
+    const palette = window.getComputedStyle(document.documentElement);
+    return Object.fromEntries(categories.map(name => [name, palette.getPropertyValue(chartColorProperties[name]).trim()]));
+  }, []);
   const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);
-  const recent = useMemo(() => [...rows].sort((a, b) => b.added_on.localeCompare(a.added_on) || b.id - a.id).slice(0, 5), [rows]);
+  const recent = useMemo(() => [...rows].sort((a, b) => b.id - a.id).slice(0, 5), [rows]);
   const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);
   return (
     <div id="page-recommendation-0" className="ds-page">
@@ -91,7 +96,7 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
               <div className="ds-card">{loading ? <p className="ds-notice" role="status">Loading recommendations…</p> : error ? <p className="ds-notice" role="alert">Recently added recommendations are unavailable right now.</p> : recent.length ? <ul className="tracker-recent-list">{recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className="ds-badge">{row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)}</ul> : <p className="tracker-muted">Nothing here yet. Add your first recommendation to get started!</p>}</div>
             </section>
             <section className="tracker-section" aria-labelledby="distribution-heading"><div className="ds-card"><h2 id="distribution-heading" className="ds-heading">Distribution by category</h2>
-              {loading ? <p className="ds-notice" role="status">Loading chart…</p> : error ? <p className="ds-notice" role="alert">Chart data is unavailable right now.</p> : <BarChartComponent id="recommendation-distribution" data={chartData} labelField="name" dataField="count" options={{ orientation: "vertical", showLegend: false, integerTicks: true, categoryColors, valueLabels: true }} />}
+              {loading ? <p className="ds-notice" role="status">Loading chart…</p> : error ? <p className="ds-notice" role="alert">Chart data is unavailable right now.</p> : <BarChartComponent id="recommendation-distribution" data={chartData} labelField="name" dataField="count" options={{ orientation: "vertical", showLegend: false, integerTicks: true, categoryColors: chartColors, valueLabels: true }} />}
             </div></section>
           </> : view === "add" ? <section className="tracker-section tracker-form-section"><h1 className="ds-heading">Add recommendation</h1><p className="tracker-muted">Keep a new recommendation in one place.</p>
             <FormBlock id="add-recommendation-form" className="ds-card tracker-form" endpoint="/recommendation/" entity="Recommendation" submitLabel="Save" submitClassName="ds-btn ds-btn-primary" onSaved={() => navigate("/recommendation")} fields={[
