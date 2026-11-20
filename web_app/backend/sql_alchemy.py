@@ -67,6 +67,9 @@ class RecommendationCategory(enum.Enum):
     Article = "Article"
     Recipe = "Recipe"
     Restaurant = "Restaurant"
+    Podcast = "Podcast"
+    Product = "Product"
+    App = "App"
     Other = "Other"
 
 class RecommendationStatus(enum.Enum):

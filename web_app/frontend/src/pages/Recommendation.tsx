@@ -7,14 +7,32 @@ import { BarChartComponent } from "../components/charts/BarChartComponent";
 import { backendUrl } from "../components/runtime/bindingData";
 import { useDataVersion } from "../components/runtime/dataVersion";
 
-type Category = "Book" | "Film" | "Place" | "Article" | "Recipe" | "Restaurant" | "Other";
+type Category = string;
 type Status = "ToTry" | "Done" | "Dropped";
 type RecordItem = { id: number; title: string; category: Category; status: Status; note: string | null; added_on: string };
-const categories: Category[] = ["Book", "Film", "Place", "Article", "Recipe", "Restaurant", "Other"];
+// OpenAPI publishes the RecommendationCategory enum used by the backend create schema.
+const modelCategories: Category[] = ["Book", "Film", "Place", "Article", "Recipe", "Restaurant", "Podcast", "Product", "App", "Other"];
 const statuses: Status[] = ["ToTry", "Done", "Dropped"];
-const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Recipe: "🍲", Restaurant: "🍽️", Other: "✨" };
-const chartColorProperties: Record<Category, string> = { Book: "--tracker-indigo", Film: "--tracker-sky", Place: "--tracker-teal", Article: "--tracker-amber", Recipe: "--tracker-coral", Restaurant: "--tracker-violet", Other: "--tracker-slate" };
-const tableOptions = {
+const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Recipe: "🍲", Restaurant: "🍽️", Podcast: "🎧", Product: "📦", App: "📱", Other: "✨" };
+const iconFor = (category: Category) => categoryIcons[category] || "✨";
+const chartColorProperties: Record<Category, string> = { Book: "--tracker-indigo", Film: "--tracker-sky", Place: "--tracker-teal", Article: "--tracker-amber", Recipe: "--tracker-coral", Restaurant: "--tracker-violet", Podcast: "--tracker-slate", Product: "--tracker-pink", App: "--tracker-emerald", Other: "--tracker-rose" };
+const useCategories = () => {
+  const [categories, setCategories] = useState<Category[]>(modelCategories);
+  useEffect(() => {
+    let active = true;
+    axios.get<{ components?: { schemas?: { RecommendationCategory?: { enum?: string[] } } } }>(backendUrl("/openapi.json"))
+      .then(({ data }) => {
+        const values = data.components?.schemas?.RecommendationCategory?.enum;
+        if (active && Array.isArray(values) && values.length) {
+          setCategories(values);
+        }
+      })
+      .catch(() => { /* Keep the complete model-backed fallback when schema is unavailable. */ });
+    return () => { active = false; };
+  }, []);
+  return categories;
+};
+const createTableOptions = (categories: Category[]) => ({
   showHeader: true, stripedRows: false, showPagination: true, rowsPerPage: 5,
   actionButtons: true, hideCreateButton: true,
   columns: [
@@ -31,7 +49,7 @@ const tableOptions = {
     { label: "Note", column_type: "field", field: "note", type: "str", required: false },
     { label: "Added on", column_type: "field", field: "added_on", type: "date", required: true },
   ],
-};
+});
 
 const useRecommendations = () => {
   const [rows, setRows] = useState<RecordItem[]>([]);
@@ -54,6 +72,8 @@ const useRecommendations = () => {
 const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "list" }) => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const categories = useCategories();
+  const tableOptions = useMemo(() => createTableOptions(categories), [categories]);
   const category = categories.find(name => name === searchParams.get("category")) || "";
   const status = statuses.find(name => name === searchParams.get("status")) || "";
   const updateFilters = (nextCategory: string, nextStatus: string) => {
@@ -66,9 +86,9 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
   const chartColors = useMemo(() => {
     if (typeof window === "undefined") return {};
     const palette = window.getComputedStyle(document.documentElement);
-    return Object.fromEntries(categories.map(name => [name, palette.getPropertyValue(chartColorProperties[name]).trim()]));
-  }, []);
-  const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);
+    return Object.fromEntries(categories.map(name => [name, palette.getPropertyValue(chartColorProperties[name] || "--tracker-slate").trim()]));
+  }, [categories]);
+  const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [categories, rows]);
   const recent = useMemo(() => [...rows].sort((a, b) => b.id - a.id).slice(0, 5), [rows]);
   const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);
   return (
@@ -90,7 +110,7 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
               {loading ? <p className="ds-notice" role="status">Loading categories…</p> : error ? <p className="ds-notice" role="alert">Categories are unavailable right now.</p> : <div className="tracker-category-grid">
                 {categories.map(name => { const matching = rows.filter(row => row.category === name); return (
                   <Link key={name} className="ds-card tracker-category-card" to={`/recommendation?category=${encodeURIComponent(name)}`}>
-                    <span className="tracker-category-icon" aria-hidden="true">{categoryIcons[name]}</span>
+                    <span className="tracker-category-icon" aria-hidden="true">{iconFor(name)}</span>
                     <h3>{name}</h3><strong className="tracker-category-count">{matching.length}</strong>
                     <span className="tracker-muted">{matching.length === 1 ? "recommendation" : "recommendations"}</span>
                     <div className="tracker-card-stats"><span>To try <b>{matching.filter(row => row.status === "ToTry").length}</b></span><span>Done <b>{matching.filter(row => row.status === "Done").length}</b></span></div>
@@ -99,7 +119,7 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
               </div>}
             </section>
             <section className="tracker-section" aria-labelledby="recent-heading"><div className="tracker-section-heading"><h2 id="recent-heading" className="ds-heading">Recently added</h2><p>The latest additions to your collection.</p></div>
-              <div className="ds-card">{loading ? <p className="ds-notice" role="status">Loading recommendations…</p> : error ? <p className="ds-notice" role="alert">Recently added recommendations are unavailable right now.</p> : recent.length ? <ul className="tracker-recent-list">{recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className="ds-badge">{row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)}</ul> : <p className="tracker-muted">Nothing here yet. Add your first recommendation to get started!</p>}</div>
+              <div className="ds-card">{loading ? <p className="ds-notice" role="status">Loading recommendations…</p> : error ? <p className="ds-notice" role="alert">Recently added recommendations are unavailable right now.</p> : recent.length ? <ul className="tracker-recent-list">{recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className="ds-badge"><span aria-hidden="true">{iconFor(row.category)}</span> {row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)}</ul> : <p className="tracker-muted">Nothing here yet. Add your first recommendation to get started!</p>}</div>
             </section>
             <section className="tracker-section" aria-labelledby="distribution-heading"><div className="ds-card"><h2 id="distribution-heading" className="ds-heading">Distribution by category</h2>
               {loading ? <p className="ds-notice" role="status">Loading chart…</p> : error ? <p className="ds-notice" role="alert">Chart data is unavailable right now.</p> : <BarChartComponent id="recommendation-distribution" data={chartData} labelField="name" dataField="count" options={{ orientation: "vertical", showLegend: false, integerTicks: true, categoryColors: chartColors, valueLabels: true }} />}
@@ -109,22 +129,25 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
               { name: "title", field: "title", type: "str" }, { name: "category", field: "category", type: "enum" }, { name: "status", field: "status", type: "enum" }, { name: "note", field: "note", type: "str" }, { name: "added_on", field: "added_on", type: "date" },
             ]}>
               <div className="ds-field"><label className="ds-label" htmlFor="rec-title">Title</label><input className="ds-input" id="rec-title" name="title" type="text" required maxLength={100} /></div>
-              <div className="ds-grid-2"><div className="ds-field"><label className="ds-label" htmlFor="rec-category">Category</label><select className="ds-input" id="rec-category" name="category" required defaultValue=""><option value="" disabled>Select a category</option>{categories.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
+              <div className="ds-grid-2"><div className="ds-field"><label className="ds-label" htmlFor="rec-category">Category</label><select className="ds-input" id="rec-category" name="category" required defaultValue=""><option value="" disabled>Select a category</option>{categories.map(item => <option key={item} value={item}>{iconFor(item)} {item}</option>)}</select></div>
               <div className="ds-field"><label className="ds-label" htmlFor="rec-status">Status</label><select className="ds-input" id="rec-status" name="status" required defaultValue=""><option value="" disabled>Select a status</option>{statuses.map(item => <option key={item} value={item}>{item === "ToTry" ? "To try" : item}</option>)}</select></div></div>
               <div className="ds-field"><label className="ds-label" htmlFor="rec-note">Note (optional)</label><textarea className="ds-input" id="rec-note" name="note" rows={4} maxLength={100} /></div>
               <div className="ds-field"><label className="ds-label" htmlFor="rec-date">Added on</label><input className="ds-input" id="rec-date" name="added_on" type="date" required /></div>
             </FormBlock>
           </section> : <section className="tracker-section"><div className="tracker-list-heading"><div><h1 id="iwr1h" className="ds-heading">Recommendations</h1><p id="ifus2" className="tracker-muted">Browse, sort and manage everything you’ve saved.</p></div><Link className="ds-btn ds-btn-primary" to="/recommendation/new">Add recommendation</Link></div>
             <div className="ds-card tracker-filter-panel" role="group" aria-label="Filter recommendations">
-              <div className="tracker-category-chips" aria-label="Category chips">
-                {["", ...categories].map(name => <button key={name || "all"} type="button" className={`ds-btn tracker-category-chip${category === name ? " active" : ""}`} aria-pressed={category === name} onClick={() => updateFilters(name, status)}>{name || "All"}</button>)}
+              <div className="tracker-filter-row">
+                <span className="ds-label" id="category-filter-label">Category</span>
+                <div className="tracker-category-chips" role="group" aria-labelledby="category-filter-label">
+                  {["", ...categories].map(name => <button key={name || "all"} type="button" className={`ds-btn tracker-category-chip${category === name ? " active" : ""}`} aria-pressed={category === name} onClick={() => updateFilters(name, status)}>{name && <span className="tracker-category-chip-icon" aria-hidden="true">{iconFor(name)}</span>}{name || "All"}</button>)}
+                </div>
               </div>
-              <label className="ds-label tracker-status-filter" htmlFor="recommendation-status-filter">Status
-                <select className="ds-input" id="recommendation-status-filter" value={status} onChange={event => updateFilters(category, event.target.value)}>
-                  <option value="">All statuses</option>
-                  {statuses.map(name => <option key={name} value={name}>{name === "ToTry" ? "To try" : name}</option>)}
-                </select>
-              </label>
+              <div className="tracker-filter-row">
+                <span className="ds-label" id="status-filter-label">Status</span>
+                <div className="tracker-category-chips" role="group" aria-labelledby="status-filter-label">
+                  {["", ...statuses].map(name => <button key={name || "all"} type="button" className={`ds-btn tracker-category-chip${status === name ? " active" : ""}`} aria-pressed={status === name} onClick={() => updateFilters(category, name)}>{name === "ToTry" ? "To try" : name || "All"}</button>)}
+                </div>
+              </div>
             </div>
             <TableBlock id="table-recommendation-0" className="has-data-binding tracker-table" title="Recommendation list" options={tableOptions} filter={filtered} dataBinding={{ entity: "Recommendation", endpoint: "/recommendation/", row_key_fields: ["id"] }} />
           </section>}

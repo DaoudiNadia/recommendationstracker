@@ -1,5 +1,5 @@
 {
-  "instructions": "## Assistant's notes (may be inaccurate)\n\nUse these only for choices the user confirmed in the conversation that are missing from their request below. Never add a feature, database, framework, tool or deployment step that is not in the user's request; where these notes disagree with it, the user's request wins.\n\nFor the existing web app, update the Recommendations page: remove the Category and Status dropdown filters and their corresponding chip groups, replacing them with a row of clickable, pill-shaped Category chips. The available options include All, Book, Film, Place, Article, and Recipe; preserve any remaining options from the existing request.\n\n## The user's original request, verbatim\n\nThis is the authority. Where the summary above is shorter or differs, this text wins.\n\nCreate a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Article, Recipe, Restaurant, Other (required)\nstatus: enumeration RecommendationStatus with values ToTry, Done, Dropped (required)\nnote: str (optional)\nadded_on: date (required)\nGUI diagram: three screens, Home (main page), Recommendations and Add recommendation.\n\nNavigation bar on all screens: the app title on the left, and exactly three items on the right: Home, Recommendations, Add recommendation. No other items or duplicate links in the bar.\n\nHome screen, from top to bottom:\n\nA banner with the title \"Recommendations Tracker\", the subtitle \"All your recommendations, organised by type\", the total number of recommendations, and one \"Add recommendation\" button with clear spacing from the text.\nA \"Browse by category\" section with seven cards (Book, Film, Place, Article, Recipe, Restaurant, Other). Each card shows an icon, the category name, the number of recommendations, and how many are To try and Done. Clicking a card opens the Recommendations screen showing only that category.\nA \"Recently added\" section with the last 5 recommendations (title, category, date), and a friendly message when there are none yet. This section appears once.\nA vertical bar chart titled \"Distribution by category\", with one bar per category (all seven always shown, including those with 0), a different colour per bar, and the count written above each bar. The Y axis must show whole numbers only (0, 1, 2, 3...), never decimals such as 0.5 or 0.25, even when there are only one or two recommendations. Set the axis to integer ticks with a minimum of 0 and a step of 1.\nRecommendations screen: a page title and short subtitle, filters for category and status, one \"Add recommendation\" button, and a table bound to Recommendation showing all five attributes, with Edit and Delete, sorting and pagination.\n\nAdd recommendation screen: a form bound to Recommendation with dropdowns for category and status and a date input for added_on, and a Save button.\n\nDesign: modern, clean and appealing. Use a soft indigo-to-sky-blue gradient on the banner, a light neutral page background, white rounded cards with a subtle shadow and a gentle hover lift, and generous, even spacing between sections. Use a harmonious palette for the categories and chart bars: indigo, sky blue, teal, amber, coral, violet, slate. Use one consistent font, and highlight the current page in the navigation bar. No authentication and no agents.\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nTHE CODE\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nthe new categories are not included in the app!!\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nUpdate the app to include all the categories present in enumeration RecommendationCategory!\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nbut nothing have changed! you should generate code for the new GUI\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nnow generate the code taking into account this change",
+  "instructions": "## Assistant's notes (may be inaccurate)\n\nUse these only for choices the user confirmed in the conversation that are missing from their request below. Never add a feature, database, framework, tool or deployment step that is not in the user's request; where these notes disagree with it, the user's request wins.\n\nUpdate the existing web app frontend: show all 10 model-backed categories (Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, Other) with an icon for each on the Recommendations page and Home cards and chart. Where possible, read category values from the model instead of a hardcoded list. Replace the Status dropdown with chips styled like the category chips: All, To try, Done, Dropped. Combine the category and status chip rows to filter the table.\n\n## The user's original request, verbatim\n\nThis is the authority. Where the summary above is shorter or differs, this text wins.\n\nCreate a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Article, Recipe, Restaurant, Other (required)\nstatus: enumeration RecommendationStatus with values ToTry, Done, Dropped (required)\nnote: str (optional)\nadded_on: date (required)\nGUI diagram: three screens, Home (main page), Recommendations and Add recommendation.\n\nNavigation bar on all screens: the app title on the left, and exactly three items on the right: Home, Recommendations, Add recommendation. No other items or duplicate links in the bar.\n\nHome screen, from top to bottom:\n\nA banner with the title \"Recommendations Tracker\", the subtitle \"All your recommendations, organised by type\", the total number of recommendations, and one \"Add recommendation\" button with clear spacing from the text.\nA \"Browse by category\" section with seven cards (Book, Film, Place, Article, Recipe, Restaurant, Other). Each card shows an icon, the category name, the number of recommendations, and how many are To try and Done. Clicking a card opens the Recommendations screen showing only that category.\nA \"Recently added\" section with the last 5 recommendations (title, category, date), and a friendly message when there are none yet. This section appears once.\nA vertical bar chart titled \"Distribution by category\", with one bar per category (all seven always shown, including those with 0), a different colour per bar, and the count written above each bar. The Y axis must show whole numbers only (0, 1, 2, 3...), never decimals such as 0.5 or 0.25, even when there are only one or two recommendations. Set the axis to integer ticks with a minimum of 0 and a step of 1.\nRecommendations screen: a page title and short subtitle, filters for category and status, one \"Add recommendation\" button, and a table bound to Recommendation showing all five attributes, with Edit and Delete, sorting and pagination.\n\nAdd recommendation screen: a form bound to Recommendation with dropdowns for category and status and a date input for added_on, and a Save button.\n\nDesign: modern, clean and appealing. Use a soft indigo-to-sky-blue gradient on the banner, a light neutral page background, white rounded cards with a subtle shadow and a gentle hover lift, and generous, even spacing between sections. Use a harmonious palette for the categories and chart bars: indigo, sky blue, teal, amber, coral, violet, slate. Use one consistent font, and highlight the current page in the navigation bar. No authentication and no agents.\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nTHE CODE\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nthe new categories are not included in the app!!\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nUpdate the app to include all the categories present in enumeration RecommendationCategory!\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nbut nothing have changed! you should generate code for the new GUI\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nnow generate the code taking into account this change\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nThe category chips on the Recommendations page and the cards and chart on Home still show only 7 categories. The model now has 10: Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, Other. Update every place in the frontend that lists categories so it shows all 10, with an icon for each, and make the chips read the values from the model instead of a hardcoded list where possible. Also replace the Status dropdown with a row of chips (All, To try, Done, Dropped) styled like the category chips. The two chip rows combine to filter the table.",
   "history": [
     {
       "instructions": "Create a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Arti",
@@ -81,6 +81,18 @@
         "web_app/frontend/src/pages/Recommendation.tsx"
       ],
       "run_id": "6ca974cd7fb34b9cb3f03fa5f1b6e6b2"
+    },
+    {
+      "instructions": "The category chips on the Recommendations page and the cards and chart on Home still show only 7 categories. The model now has 10: Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, Other. Update every place in the frontend that lists categories so it shows all 10, with an icon f",
+      "saved_at": "2026-11-20T14:32:31+00:00",
+      "mode": "modify",
+      "files_touched": [
+        "web_app/backend/pydantic_classes.py",
+        "web_app/backend/sql_alchemy.py",
+        "web_app/frontend/src/design-overrides.css",
+        "web_app/frontend/src/pages/Recommendation.tsx"
+      ],
+      "run_id": "d56fb5c02de54312abb218fbde4d9487"
     }
   ],
   "model": {
@@ -90,8 +102,8 @@
       "Recommendation"
     ],
     "enumerations": [
-      "RecommendationCategory",
-      "RecommendationStatus"
+      "RecommendationStatus",
+      "RecommendationCategory"
     ],
     "associations": 0,
     "user_model": {
@@ -166,10 +178,10 @@
     "description": "Recommendations Tracker web app",
     "has_user_interface": true
   },
-  "turns": 39,
-  "tool_calls_count": 73,
+  "turns": 37,
+  "tool_calls_count": 70,
   "compactions": 0,
-  "elapsed_seconds": 321.4,
+  "elapsed_seconds": 193.6,
   "max_cost_usd": 5.0,
   "max_runtime_seconds": 2400,
   "adaptive_budget_applied": true,
@@ -177,39 +189,29 @@
   "tasks": [
     {
       "id": 1,
-      "text": "Extend the existing React Recommendations GUI to build the requested Home, Recommendations, and Add recommendation screens, with exactly the three navigation links and active-page highlighting; keep the Recommendation CRUD workflows and category/status/date fields.",
+      "text": "Update `web_app/frontend/src/pages/Recommendation.tsx` to derive category chip options and Home category cards/chart from the `RecommendationCategory` enum values, ensuring Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, and Other each appear with a category-specific icon, per R1\u2013R3.",
       "done": true,
       "attempts": 0,
       "blocked": false,
       "verification": "unverified",
       "implementation_evidence": [
         {
-          "path": "web_app/frontend/src/App.tsx",
-          "quote": "<Route path=\"/\" element={<Recommendation view=\"home\" />} />\n            <Route path=\"/recommendation\" element={<Recommendation view=\"list\" />} />\n            <Route path=\"/recommendation/new\" element={<Recommendation view=\"add\" />} />",
-          "sha256": "aec9b52dd71f0aa0d28c4c1685969cb172bae1d9cdac68b33c9376347b5a1d3b",
-          "origin": "existing"
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "quote": "const categories = useCategories();\n  const tableOptions = useMemo(() => createTableOptions(categories), [categories]);\n  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";",
+          "sha256": "97bceafc31c712cb3935b617cbe9eca40a6e6af333a701a08a9f7dbf426d3c92",
+          "origin": "written"
+        },
+        {
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [categories, rows]);",
+          "sha256": "97bceafc31c712cb3935b617cbe9eca40a6e6af333a701a08a9f7dbf426d3c92",
+          "origin": "written"
         }
       ]
     },
     {
       "id": 2,
-      "text": "Update `web_app/backend/sql_alchemy.py` and `web_app/backend/pydantic_classes.py` so `RecommendationCategory` has exactly Book, Film, Place, Article, Recipe, Restaurant, and Other as required by the request, while retaining RecommendationStatus values ToTry, Done, and Dropped.",
-      "done": true,
-      "attempts": 0,
-      "blocked": false,
-      "verification": "unverified",
-      "implementation_evidence": [
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "quote": "class RecommendationCategory(Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\"",
-          "sha256": "d09e56fd958197e85cbe8e8b68e7b838ce279dde02435d17669155028ffd0196",
-          "origin": "existing"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "text": "Implement the Home screen in `web_app/frontend/src/pages/Recommendation.tsx` (or a small cohesive component) with the requested banner, totals, seven category cards and counts, category-filter navigation, one Recently added section with latest five or friendly empty state, and a seven-bar category chart with distinct palette colours and integer Y-axis ticks (minimum 0, step 1).",
+      "text": "Replace the Status dropdown in `web_app/frontend/src/pages/Recommendation.tsx` with category-styled chips for All, To try, Done, and Dropped, and combine the selected category and status predicates when filtering the Recommendations table, per R4\u2013R5.",
       "done": true,
       "attempts": 0,
       "blocked": false,
@@ -217,56 +219,14 @@
       "implementation_evidence": [
         {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);",
-          "sha256": "183e49211e2124bdc913de1470e5d668ca66e2db88155b99c2bb1c03427e025e",
+          "quote": "const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);",
+          "sha256": "97bceafc31c712cb3935b617cbe9eca40a6e6af333a701a08a9f7dbf426d3c92",
           "origin": "written"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "text": "Implement the Recommendations screen in the existing React frontend with title/subtitle, category and status filters, one Add recommendation action, and a Recommendation table showing all five attributes with Edit, Delete, sorting, and pagination.",
-      "done": true,
-      "attempts": 0,
-      "blocked": false,
-      "verification": "unverified",
-      "implementation_evidence": [
+        },
         {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "{[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category === name ? \" active\" : \"\"}`} aria-pressed={category === name} onClick={() => setSearchParams(name ? { category: name } : {})}>{name || \"All\"}</button>)}",
-          "sha256": "183e49211e2124bdc913de1470e5d668ca66e2db88155b99c2bb1c03427e025e",
-          "origin": "written"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "text": "Implement the Add recommendation screen in the existing React frontend with a Recommendation form, category/status dropdowns, added_on date input, and Save action.",
-      "done": true,
-      "attempts": 0,
-      "blocked": false,
-      "verification": "unverified",
-      "implementation_evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "<FormBlock id=\"add-recommendation-form\" className=\"ds-card tracker-form\" endpoint=\"/recommendation/\" entity=\"Recommendation\" submitLabel=\"Save\" submitClassName=\"ds-btn ds-btn-primary\" onSaved={() => navigate(\"/recommendation\")} fields={[",
-          "sha256": "183e49211e2124bdc913de1470e5d668ca66e2db88155b99c2bb1c03427e025e",
-          "origin": "written"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "text": "Apply the requested clean visual styling in `web_app/frontend/src/design-overrides.css` and `web_app/frontend/src/index.css`: neutral background, indigo-to-sky banner, white rounded shadowed cards, hover lift, even spacing, consistent font, category/chart palette, and clear Add button spacing.",
-      "done": true,
-      "attempts": 0,
-      "blocked": false,
-      "verification": "unverified",
-      "implementation_evidence": [
-        {
-          "path": "web_app/frontend/src/design-overrides.css",
-          "quote": ".tracker-category-chip.ds-btn { border: 1px solid var(--ds-border); border-radius: 999px; background: var(--ds-surface); color: var(--ds-muted); padding: calc(var(--ds-space-md) / 2) var(--ds-space-md); font-weight: 600; cursor: pointer; transition: transform .2s, background-color .2s, box-shadow .2s; }",
-          "sha256": "72e38f677561b6a4e20afa6a9eca41f23523c4c3a1db7e5797df02fa273bc75e",
+          "quote": "{[\"\", ...statuses].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${status === name ? \" active\" : \"\"}`} aria-pressed={status === name} onClick={() => updateFilters(category, name)}>{name === \"ToTry\" ? \"To try\" : name || \"All\"}</button>)",
+          "sha256": "97bceafc31c712cb3935b617cbe9eca40a6e6af333a701a08a9f7dbf426d3c92",
           "origin": "written"
         }
       ]
@@ -275,654 +235,84 @@
   "requirements": [
     {
       "id": 1,
-      "text": "Create a web app called \u201cRecommendations Tracker\u201d to keep recommendations in one place, organised by type.",
+      "text": "Every place in the frontend that lists categories shows all 10 model categories: Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, and Other.",
       "kind": "ui",
       "status": "implemented",
       "evidence": [
         {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<span className=\"tracker-brand\">Recommendations Tracker</span>"
-        },
-        {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const Recommendation: React.FC<{ view?: \"home\" | \"list\" | \"add\" }> = ({ view = \"list\" }) => {"
+          "line": "const modelCategories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Podcast\", \"Product\", \"App\", \"Other\"];"
         }
       ],
-      "note": "",
+      "note": "The Home cards and Recommendations category chip row iterate the categories returned by useCategories; add-form category options also use that same list. The 10 values are in the fallback and the page replaces that list with the enum values obtained from the backend schema when available.",
       "inspection_paths": [],
       "verification": "unverified",
       "verification_note": "Found in the source; screens: not run (the frontend builds)"
     },
     {
       "id": 2,
-      "text": "Provide exactly three screens: Home, Recommendations, and Add recommendation.",
+      "text": "Each of the 10 categories has an icon wherever categories are listed in the frontend.",
       "kind": "ui",
       "status": "implemented",
       "evidence": [
         {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<Route path=\"/\" element={<Recommendation view=\"home\" />} />"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<Route path=\"/recommendation\" element={<Recommendation view=\"list\" />} />"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<Route path=\"/recommendation/new\" element={<Recommendation view=\"add\" />} />"
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "line": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", Podcast: \"\ud83c\udfa7\", Product: \"\ud83d\udce6\", App: \"\ud83d\udcf1\", Other: \"\u2728\" };"
         }
       ],
-      "note": "These are the three screen routes; the wildcard redirects to Home rather than rendering another screen.",
+      "note": "iconFor maps every category in the current ten-value model to an icon. It is used in category cards, recent recommendations, category chips, and add-form options.",
       "inspection_paths": [],
       "verification": "unverified",
       "verification_note": "Found in the source; screens: not run (the frontend builds)"
     },
     {
       "id": 3,
-      "text": "Show a navigation bar on all screens with the app title on the left and exactly three items on the right: Home, Recommendations, and Add recommendation, with no other or duplicate links.",
+      "text": "Where possible, category chips read their values from the RecommendationCategory model rather than a hardcoded list.",
       "kind": "ui",
       "status": "implemented",
       "evidence": [
         {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<span className=\"tracker-brand\">Recommendations Tracker</span>"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/\" end className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Home</NavLink>"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/recommendation\" className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Recommendations</NavLink>"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/recommendation/new\" className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Add recommendation</NavLink>"
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "line": "axios.get<{ components?: { schemas?: { RecommendationCategory?: { enum?: string[] } } } }>(backendUrl(\"/openapi.json\"))"
         }
       ],
-      "note": "The navigation renders the title and exactly these three links.",
+      "note": "The category list is populated from RecommendationCategory's OpenAPI enum when possible, with a complete 10-category fallback if schema loading fails.",
       "inspection_paths": [],
       "verification": "unverified",
       "verification_note": "Found in the source; screens: not run (the frontend builds)"
     },
     {
       "id": 4,
-      "text": "Highlight the current page in the navigation bar.",
+      "text": "Replace the Status dropdown on the Recommendations page with status chips for All, To try, Done, and Dropped, styled like the category chips.",
       "kind": "ui",
       "status": "implemented",
       "evidence": [
         {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/\" end className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Home</NavLink>"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/recommendation\" className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Recommendations</NavLink>"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<NavLink to=\"/recommendation/new\" className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Add recommendation</NavLink>"
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "line": "{[\"\", ...statuses].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${status === name ? \" active\" : \"\"}`} aria-pressed={status === name} onClick={() => updateFilters(category, name)}>{name === \"ToTry\" ? \"To try\" : name || \"All\"}</button>"
         }
       ],
-      "note": "NavLink derives the active class from the current route.",
+      "note": "The status filter is rendered as All, To try, Done, and Dropped buttons using the category chip styling class; there is no Status dropdown in the Recommendations filter panel.",
       "inspection_paths": [],
       "verification": "unverified",
       "verification_note": "Found in the source; screens: not run (the frontend builds)"
     },
     {
       "id": 5,
-      "text": "Model one class named Recommendation, with no other classes or associations.",
+      "text": "The category and status chip rows combine to filter the Recommendations table.",
       "kind": "rule",
       "status": "implemented",
       "evidence": [
         {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "class Recommendation(Base):"
-        }
-      ],
-      "note": "The supplied ORM model defines Recommendation as the sole domain entity class and shows no relationships or associations. Framework and utility classes are not domain-model entities.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 6,
-      "text": "A Recommendation has a required title of type str.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "title: Mapped_[str] = mapped_column(String_(100), nullable=False)"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "title: str = Field(min_length=1)"
-        }
-      ],
-      "note": "The title is a required string in the model and creation schema, and the schema also rejects whitespace-only values.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 7,
-      "text": "A Recommendation has a required category from RecommendationCategory: Book, Film, Place, Article, Recipe, Restaurant, or Other.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "class RecommendationCategory(enum.Enum):"
-        },
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "Other = \"Other\""
-        },
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "category: Mapped_[RecommendationCategory] = mapped_column(Enum(RecommendationCategory), nullable=False)"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "category: RecommendationCategory"
-        }
-      ],
-      "note": "Both enum declarations include Book, Film, Place, Article, Recipe, Restaurant, and Other; the field is required in the database model and create schema.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 8,
-      "text": "A Recommendation has a required status from RecommendationStatus: ToTry, Done, or Dropped.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "status: Mapped_[RecommendationStatus] = mapped_column(Enum(RecommendationStatus), nullable=False)"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "status: RecommendationStatus"
-        }
-      ],
-      "note": "RecommendationStatus is declared with ToTry, Done, and Dropped, and status is required in both the ORM model and create schema.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 9,
-      "text": "A Recommendation may have an optional note of type str.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "note: Mapped_[Optional_[str]] = mapped_column(String_(100), nullable=True)"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "note: Optional[str] = None"
-        }
-      ],
-      "note": "The note field is optional and string-typed.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 10,
-      "text": "A Recommendation has a required added_on date.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "added_on: Mapped_[dt_date] = mapped_column(Date_, nullable=False)"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "added_on: date"
-        }
-      ],
-      "note": "added_on is a required date in both the ORM model and create schema.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 11,
-      "text": "The Home screen banner shows the title \u201cRecommendations Tracker\u201d and subtitle \u201cAll your recommendations, organised by type\u201d.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div><h1 className=\"ds-heading\">Recommendations Tracker</h1><p>All your recommendations, organised by type</p>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 12,
-      "text": "The Home screen banner shows the total number of recommendations.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"tracker-total\"><strong>{loading ? \"\u2026\" : rows.length}</strong><span>Total recommendations</span></div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 13,
-      "text": "The Home screen banner has one \u201cAdd recommendation\u201d button, spaced clearly from the text.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<Link className=\"ds-btn ds-btn-primary tracker-hero-action\" to=\"/recommendation/new\">Add recommendation</Link>"
-        }
-      ],
-      "note": "Only one banner action is rendered as a link and it is a sibling of the heading/copy block. Spacing styling is assigned via tracker-hero-action; the styling excerpt is not included.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 14,
-      "text": "The Home screen has a \u201cBrowse by category\u201d section with one card for each of the seven categories: Book, Film, Place, Article, Recipe, Restaurant, and Other.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{categories.map(name => { const matching = rows.filter(row => row.category === name); return ("
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 15,
-      "text": "Each category card shows an icon, the category name, the number of recommendations, and the counts of To try and Done recommendations.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", Other: \"\u2728\" };"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"tracker-card-stats\"><span>To try <b>{matching.filter(row => row.status === \"ToTry\").length}</b></span><span>Done <b>{matching.filter(row => row.status === \"Done\").length}</b></span></div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 16,
-      "text": "Clicking a category card opens the Recommendations screen filtered to that category.",
-      "kind": "action",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<Link key={name} className=\"ds-card tracker-category-card\" to={`/recommendation?category=${encodeURIComponent(name)}`}>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 17,
-      "text": "The Home screen has one \u201cRecently added\u201d section, shown once, containing the last five recommendations with their title, category, and date.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const recent = useMemo(() => [...rows].sort((a, b) => b.id - a.id).slice(0, 5), [rows]);"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"ds-card\">{loading ? <p className=\"ds-notice\" role=\"status\">Loading recommendations\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Recently added recommendations are unavailable right now.</p> : recent.length ? <ul className=\"tracker-recent-list\">{recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className=\"ds-badge\">{row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)}</ul> : <p className=\"tracker-muted\">Nothing here yet. Add your first recommendation to get started!</p>}</div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 18,
-      "text": "When there are no recommendations, the Recently added section shows a friendly message.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"ds-card\">{loading ? <p className=\"ds-notice\" role=\"status\">Loading recommendations\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Recently added recommendations are unavailable right now.</p> : recent.length ? <ul className=\"tracker-recent-list\">{recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className=\"ds-badge\">{row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)}</ul> : <p className=\"tracker-muted\">Nothing here yet. Add your first recommendation to get started!</p>}</div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 19,
-      "text": "The Home screen has a vertical bar chart titled \u201cDistribution by category\u201d.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{loading ? <p className=\"ds-notice\" role=\"status\">Loading chart\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Chart data is unavailable right now.</p> : <BarChartComponent id=\"recommendation-distribution\" data={chartData} labelField=\"name\" dataField=\"count\" options={{ orientation: \"vertical\", showLegend: false, integerTicks: true, categoryColors: chartColors, valueLabels: true }} />}"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 20,
-      "text": "The category chart always shows one bar for each of the seven categories, including categories with zero recommendations.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 21,
-      "text": "Each chart bar has a different colour and shows its count above the bar.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{loading ? <p className=\"ds-notice\" role=\"status\">Loading chart\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Chart data is unavailable right now.</p> : <BarChartComponent id=\"recommendation-distribution\" data={chartData} labelField=\"name\" dataField=\"count\" options={{ orientation: \"vertical\", showLegend: false, integerTicks: true, categoryColors: chartColors, valueLabels: true }} />}"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 22,
-      "text": "The chart Y axis uses whole-number ticks only, with minimum 0 and step 1.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/components/charts/BarChartComponent.tsx",
-          "line": "allowDecimals={!options?.integerTicks}"
-        }
-      ],
-      "note": "With integerTicks enabled by this chart, the component supplies integer ticks starting at zero in increments of one, rounds the upper domain to an integer, filters noninteger labels, and disables decimal ticks.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 23,
-      "text": "The Recommendations screen shows a page title and short subtitle.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<section className=\"tracker-section\"><div className=\"tracker-list-heading\"><div><h1 id=\"iwr1h\" className=\"ds-heading\">Recommendations</h1><p id=\"ifus2\" className=\"tracker-muted\">Browse, sort and manage everything you\u2019ve saved.</p></div><Link className=\"ds-btn ds-btn-primary\" to=\"/recommendation/new\">Add recommendation</Link></div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 24,
-      "text": "The Recommendations screen provides category and status filters.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"tracker-category-chips\" aria-label=\"Category chips\">"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<label className=\"ds-label tracker-status-filter\" htmlFor=\"recommendation-status-filter\">Status"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 25,
-      "text": "The Recommendations screen has one \u201cAdd recommendation\u201d button.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<section className=\"tracker-section\"><div className=\"tracker-list-heading\"><div><h1 id=\"iwr1h\" className=\"ds-heading\">Recommendations</h1><p id=\"ifus2\" className=\"tracker-muted\">Browse, sort and manage everything you\u2019ve saved.</p></div><Link className=\"ds-btn ds-btn-primary\" to=\"/recommendation/new\">Add recommendation</Link></div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 26,
-      "text": "The Recommendations screen has a table bound to Recommendation showing all five attributes, with Edit and Delete actions, sorting, and pagination.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{ label: \"Title\", column_type: \"field\", field: \"title\", type: \"str\", required: true },"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{ label: \"Category\", column_type: \"field\", field: \"category\", type: \"enum\", options: categories, required: true },"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{ label: \"Status\", column_type: \"field\", field: \"status\", type: \"enum\", options: statuses, required: true },"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{ label: \"Note\", column_type: \"field\", field: \"note\", type: \"str\", required: false },"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "{ label: \"Added on\", column_type: \"field\", field: \"added_on\", type: \"date\", required: true },"
+          "line": "const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);"
         },
         {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
           "line": "<TableBlock id=\"table-recommendation-0\" className=\"has-data-binding tracker-table\" title=\"Recommendation list\" options={tableOptions} filter={filtered} dataBinding={{ entity: \"Recommendation\", endpoint: \"/recommendation/\", row_key_fields: [\"id\"] }} />"
         }
       ],
-      "note": "The table is bound to the Recommendation endpoint and explicitly configures its five attributes. Its options enable pagination and row action buttons; TableComponent provides sorting via handleSortChange and registers edit/remove actions, with delete handled through the bound endpoint. The remainder of TableComponent is truncated, but the shown configuration and executable handlers establish the requested table behaviors.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 27,
-      "text": "The Add recommendation screen has a form bound to Recommendation, with dropdowns for category and status, a date input for added_on, and a Save button.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<FormBlock id=\"add-recommendation-form\" className=\"ds-card tracker-form\" endpoint=\"/recommendation/\" entity=\"Recommendation\" submitLabel=\"Save\" submitClassName=\"ds-btn ds-btn-primary\" onSaved={() => navigate(\"/recommendation\")} fields={["
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"ds-grid-2\"><div className=\"ds-field\"><label className=\"ds-label\" htmlFor=\"rec-category\">Category</label><select className=\"ds-input\" id=\"rec-category\" name=\"category\" required defaultValue=\"\"><option value=\"\" disabled>Select a category</option>{categories.map(item => <option key={item} value={item}>{item}</option>)}</select></div>"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"ds-field\"><label className=\"ds-label\" htmlFor=\"rec-status\">Status</label><select className=\"ds-input\" id=\"rec-status\" name=\"status\" required defaultValue=\"\"><option value=\"\" disabled>Select a status</option>{statuses.map(item => <option key={item} value={item}>{item === \"ToTry\" ? \"To try\" : item}</option>)}</select></div></div>"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<div className=\"ds-field\"><label className=\"ds-label\" htmlFor=\"rec-date\">Added on</label><input className=\"ds-input\" id=\"rec-date\" name=\"added_on\" type=\"date\" required /></div>"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 28,
-      "text": "Use a modern, clean, appealing design with a light neutral page background, white rounded cards, subtle shadows, gentle hover lift, generous even spacing, and one consistent font.",
-      "kind": "ui",
-      "status": "unverified",
-      "evidence": "",
-      "note": "Judged again with web_app/frontend/src/components/runtime/TableBlock.tsx, web_app/frontend/src/components/table/TableComponent.tsx, web_app/backend/main_api.py, web_app/backend/routers/recommendation.py, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The shown inline table styles establish white, rounded card-like surfaces and a subtle shadow, but do not establish the overall light-neutral page background, hover lift, generous even spacing, or consistent font across the app. The stylesheet and app-wide frontend styles were omitted, so these design requirements cannot be verified from the supplied excerpts.",
-      "inspection_paths": [
-        "web_app/frontend/src/components/table/TableComponent.css",
-        "web_app/frontend/src/index.css",
-        "web_app/frontend/src/App.css"
-      ]
-    },
-    {
-      "id": 29,
-      "text": "Use a soft indigo-to-sky-blue gradient on the banner.",
-      "kind": "ui",
-      "status": "unverified",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "<header className=\"ds-hero tracker-hero\">"
-        }
-      ],
-      "note": "Judged again with web_app/frontend/src/components/table/TableComponent.tsx, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The page applies the banner class, but the stylesheet that could establish its requested gradient was not supplied. Inspect the CSS defining .tracker-hero or .ds-hero.",
-      "inspection_paths": [
-        "web_app/frontend/src/pages/Recommendation.css",
-        "web_app/frontend/src/App.css",
-        "web_app/frontend/src/index.css"
-      ]
-    },
-    {
-      "id": 30,
-      "text": "Use a harmonious category and chart palette of indigo, sky blue, teal, amber, coral, violet, and slate.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const chartColorProperties: Record<Category, string> = { Book: \"--tracker-indigo\", Film: \"--tracker-sky\", Place: \"--tracker-teal\", Article: \"--tracker-amber\", Recipe: \"--tracker-coral\", Restaurant: \"--tracker-violet\", Other: \"--tracker-slate\" };"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 31,
-      "text": "The app has no authentication and no agents.",
-      "kind": "rule",
-      "status": "unverified",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/main_api.py",
-          "line": "app = FastAPI("
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "function App() {"
-        }
-      ],
-      "note": "Judged again with web_app/frontend/src/components/runtime/TableBlock.tsx, web_app/frontend/src/components/table/TableComponent.tsx, web_app/backend/main_api.py, web_app/backend/routers/recommendation.py, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The shown API setup has no visible authentication middleware or agent routes, but omitted entry/configuration and API/frontend files prevent establishing that authentication or agents are absent from the running application. Inspect app entry points and routing/middleware configuration. [citation 1 (web_app/frontend/src/main_api.py): the cited source path is missing, excluded or ambiguous: the line is in web_app/backend/main_api.py line 17, not in the cited file; the citation must name the file the line is in]",
-      "inspection_paths": [
-        "web_app/backend/main_api.py",
-        "web_app/backend/routers/__init__.py",
-        "web_app/frontend/src/index.tsx",
-        "web_app/frontend/src/App.tsx"
-      ]
-    },
-    {
-      "id": 32,
-      "text": "Include all categories in the RecommendationCategory enumeration in the generated GUI.",
-      "kind": "ui",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/sql_alchemy.py",
-          "line": "class RecommendationCategory(enum.Enum):"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];"
-        }
-      ],
-      "note": "",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route; screens: not run (the frontend builds)"
-    },
-    {
-      "id": 33,
-      "text": "Generate code for the updated GUI, taking into account the requirement to include all RecommendationCategory values.",
-      "kind": "action",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const Recommendation: React.FC<{ view?: \"home\" | \"list\" | \"add\" }> = ({ view = \"list\" }) => {"
-        },
-        {
-          "path": "web_app/frontend/src/App.tsx",
-          "line": "<Route path=\"/recommendation/new\" element={<Recommendation view=\"add\" />} />"
-        }
-      ],
-      "note": "",
+      "note": "The table receives one filter predicate that requires both a selected category and a selected status to match (when either is selected). Each chip updates its respective query parameter while preserving the other filter.",
       "inspection_paths": [],
       "verification": "unverified",
       "verification_note": "Found in the source; screens: not run (the frontend builds)"
@@ -931,24 +321,23 @@
   "business_rules_stated": true,
   "api_scenarios": [
     {
-      "scenario_id": "recommendation-crud-seven-categories",
+      "scenario_id": "recommendation-ten-categories-crud",
       "scenario": {
         "requests": [
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Article to read",
-              "category": "Article",
+              "title": "Listen later",
+              "category": "Podcast",
               "status": "ToTry",
-              "added_on": "2026-11-20",
-              "note": "Worth a look"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Article",
+              "category": "Podcast",
               "status": "ToTry",
-              "added_on": "2026-11-20"
+              "title": "Listen later"
             }
           },
           {
@@ -956,24 +345,23 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "title": "Article to read",
-              "note": "Worth a look"
+              "category": "Podcast",
+              "status": "ToTry"
             }
           },
           {
             "method": "PUT",
             "path": "/recommendation/{{0.id}}/",
             "json": {
-              "title": "Article read",
-              "category": "Article",
+              "title": "Listen later",
+              "category": "Product",
               "status": "Done",
-              "added_on": "2026-11-20",
-              "note": "Excellent"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "status": "Done",
-              "title": "Article read"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
@@ -981,22 +369,22 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "status": "Done",
-              "note": "Excellent"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Dinner",
-              "category": "Restaurant",
+              "title": "Try an app",
+              "category": "App",
               "status": "Dropped",
               "added_on": "2026-11-19"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
+              "category": "App",
               "status": "Dropped"
             }
           },
@@ -1010,7 +398,7 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "title": "Article read"
+              "category": "Product"
             }
           },
           {
@@ -1019,9 +407,26 @@
             "expected_status": 404
           },
           {
-            "method": "DELETE",
-            "path": "/recommendation/{{4.id}}/",
-            "expected_status": 200
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Invalid category",
+              "category": "Magazine",
+              "status": "Done",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 422
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Invalid status",
+              "category": "Book",
+              "status": "Pending",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 422
           }
         ],
         "backend": null
@@ -1038,12 +443,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Article to read",
-              "note": "Worth a look",
-              "id": 1,
+              "category": "Podcast",
               "status": "ToTry",
-              "category": "Article",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Listen later",
+              "note": null,
+              "id": 1
             },
             "truncated": false,
             "failure_count": 0
@@ -1055,12 +460,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Article to read",
-              "note": "Worth a look",
-              "id": 1,
+              "category": "Podcast",
               "status": "ToTry",
-              "category": "Article",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Listen later",
+              "note": null,
+              "id": 1
             },
             "truncated": false,
             "reads_back": [
@@ -1075,12 +480,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Article read",
-              "note": "Excellent",
-              "id": 1,
+              "category": "Product",
               "status": "Done",
-              "category": "Article",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Listen later",
+              "note": null,
+              "id": 1
             },
             "truncated": false,
             "failure_count": 0
@@ -1092,12 +497,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Article read",
-              "note": "Excellent",
-              "id": 1,
+              "category": "Product",
               "status": "Done",
-              "category": "Article",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Listen later",
+              "note": null,
+              "id": 1
             },
             "truncated": false,
             "reads_back": [
@@ -1112,12 +517,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Dinner",
-              "note": null,
-              "id": 2,
+              "category": "App",
               "status": "Dropped",
-              "category": "Restaurant",
-              "added_on": "2026-11-19"
+              "added_on": "2026-11-19",
+              "title": "Try an app",
+              "note": null,
+              "id": 2
             },
             "truncated": false,
             "failure_count": 0
@@ -1130,20 +535,20 @@
             "status": 200,
             "json": [
               {
-                "title": "Article read",
-                "note": "Excellent",
-                "id": 1,
+                "category": "Product",
                 "status": "Done",
-                "category": "Article",
-                "added_on": "2026-11-20"
+                "added_on": "2026-11-20",
+                "title": "Listen later",
+                "note": null,
+                "id": 1
               },
               {
-                "title": "Dinner",
-                "note": null,
-                "id": 2,
+                "category": "App",
                 "status": "Dropped",
-                "category": "Restaurant",
-                "added_on": "2026-11-19"
+                "added_on": "2026-11-19",
+                "title": "Try an app",
+                "note": null,
+                "id": 2
               }
             ],
             "truncated": false,
@@ -1161,10 +566,10 @@
             "status": 200,
             "json": {
               "id": 1,
-              "title": "Article read",
-              "category": "Article",
+              "title": "Listen later",
+              "category": "Product",
               "status": "Done",
-              "note": "Excellent",
+              "note": null,
               "added_on": "2026-11-20"
             },
             "truncated": false,
@@ -1187,296 +592,6 @@
           },
           {
             "index": 8,
-            "method": "DELETE",
-            "path": "/recommendation/2/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "id": 2,
-              "title": "Dinner",
-              "category": "Restaurant",
-              "status": "Dropped",
-              "note": null,
-              "added_on": "2026-11-19"
-            },
-            "truncated": false,
-            "failure_count": 0
-          }
-        ],
-        "assertion_failures": [],
-        "scope": "Only the submitted scenario was checked; this is not complete specification verification.",
-        "backend": "web_app/backend",
-        "scenario_id": "recommendation-crud-seven-categories"
-      }
-    },
-    {
-      "scenario_id": "recommendation-valid-category-literals",
-      "scenario": {
-        "requests": [
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Book example",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Book"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Film example",
-              "category": "Film",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Film"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Place example",
-              "category": "Place",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Place"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Recipe example",
-              "category": "Recipe",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Recipe"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Other example",
-              "category": "Other",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Other"
-            }
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/count/",
-            "expected_fields": {
-              "count": 5
-            }
-          }
-        ],
-        "backend": null
-      },
-      "correction_history": [],
-      "report": {
-        "status": "passed",
-        "boot": "ok",
-        "responses": [
-          {
-            "index": 0,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "Book example",
-              "note": null,
-              "id": 1,
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 1,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "Film example",
-              "note": null,
-              "id": 2,
-              "category": "Film",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 2,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "Place example",
-              "note": null,
-              "id": 3,
-              "category": "Place",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 3,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "Recipe example",
-              "note": null,
-              "id": 4,
-              "category": "Recipe",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 4,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "Other example",
-              "note": null,
-              "id": 5,
-              "category": "Other",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 5,
-            "method": "GET",
-            "path": "/recommendation/count/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "count": 5
-            },
-            "truncated": false,
-            "reads_back": [],
-            "failure_count": 0
-          }
-        ],
-        "assertion_failures": [],
-        "scope": "Only the submitted scenario was checked; this is not complete specification verification.",
-        "backend": "web_app/backend",
-        "scenario_id": "recommendation-valid-category-literals"
-      }
-    },
-    {
-      "scenario_id": "recommendation-invalid-inputs",
-      "scenario": {
-        "requests": [
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "Podcast",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "Product",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "App",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "   ",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Missing date",
-              "category": "Book",
-              "status": "ToTry"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid status",
-              "category": "Book",
-              "status": "Later",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          }
-        ],
-        "backend": null
-      },
-      "correction_history": [],
-      "report": {
-        "status": "passed",
-        "boot": "ok",
-        "responses": [
-          {
-            "index": 0,
             "method": "POST",
             "path": "/recommendation/",
             "failures": [],
@@ -1489,10 +604,10 @@
                     "body",
                     "category"
                   ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "Podcast",
+                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant', 'Podcast', 'Product', 'App' or 'Other'",
+                  "input": "Magazine",
                   "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
+                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant', 'Podcast', 'Product', 'App' or 'Other'"
                   }
                 }
               ]
@@ -1501,108 +616,7 @@
             "failure_count": 0
           },
           {
-            "index": 1,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "enum",
-                  "loc": [
-                    "body",
-                    "category"
-                  ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "Product",
-                  "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 2,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "enum",
-                  "loc": [
-                    "body",
-                    "category"
-                  ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "App",
-                  "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 3,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "value_error",
-                  "loc": [
-                    "body",
-                    "title"
-                  ],
-                  "msg": "Value error, Title is required",
-                  "input": "   ",
-                  "ctx": {
-                    "error": {}
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 4,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "missing",
-                  "loc": [
-                    "body",
-                    "added_on"
-                  ],
-                  "msg": "Field required",
-                  "input": {
-                    "title": "Missing date",
-                    "category": "Book",
-                    "status": "ToTry"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 5,
+            "index": 9,
             "method": "POST",
             "path": "/recommendation/",
             "failures": [],
@@ -1616,7 +630,7 @@
                     "status"
                   ],
                   "msg": "Input should be 'ToTry', 'Done' or 'Dropped'",
-                  "input": "Later",
+                  "input": "Pending",
                   "ctx": {
                     "expected": "'ToTry', 'Done' or 'Dropped'"
                   }
@@ -1630,164 +644,7 @@
         "assertion_failures": [],
         "scope": "Only the submitted scenario was checked; this is not complete specification verification.",
         "backend": "web_app/backend",
-        "scenario_id": "recommendation-invalid-inputs"
-      }
-    },
-    {
-      "scenario_id": "recommendation-create-valid-invalid",
-      "scenario": {
-        "requests": [
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "A book",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": [
-              200,
-              201
-            ],
-            "expected_fields": {
-              "title": "A book",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            }
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/{{0.id}}",
-            "expected_status": 200,
-            "expected_fields": {
-              "title": "A book",
-              "category": "Book"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Wrong category",
-              "category": "Invalid",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "  ",
-              "category": "Film",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          }
-        ],
-        "backend": null
-      },
-      "correction_history": [],
-      "report": {
-        "status": "passed",
-        "boot": "ok",
-        "responses": [
-          {
-            "index": 0,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "A book",
-              "note": null,
-              "id": 1,
-              "status": "ToTry",
-              "category": "Book",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 1,
-            "method": "GET",
-            "path": "/recommendation/1",
-            "failures": [],
-            "status": 200,
-            "json": {
-              "title": "A book",
-              "note": null,
-              "id": 1,
-              "status": "ToTry",
-              "category": "Book",
-              "added_on": "2026-11-20"
-            },
-            "truncated": false,
-            "reads_back": [
-              0
-            ],
-            "failure_count": 0
-          },
-          {
-            "index": 2,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "enum",
-                  "loc": [
-                    "body",
-                    "category"
-                  ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "Invalid",
-                  "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 3,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "value_error",
-                  "loc": [
-                    "body",
-                    "title"
-                  ],
-                  "msg": "Value error, Title is required",
-                  "input": "  ",
-                  "ctx": {
-                    "error": {}
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          }
-        ],
-        "assertion_failures": [],
-        "scope": "Only the submitted scenario was checked; this is not complete specification verification.",
-        "backend": "web_app/backend",
-        "scenario_id": "recommendation-create-valid-invalid"
+        "scenario_id": "recommendation-ten-categories-crud"
       }
     }
   ],
@@ -1795,30 +652,17 @@
   "model_conversion_issues": [],
   "model_assembly_issues": [],
   "usage": {
-    "api_calls": 53,
-    "input_tokens": 414774,
-    "output_tokens": 25263,
+    "api_calls": 44,
+    "input_tokens": 194664,
+    "output_tokens": 9433,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 1148575,
-    "total_tokens": 1588612,
-    "estimated_cost_usd": 0.5969,
+    "cache_read_tokens": 1334922,
+    "total_tokens": 1539019,
+    "estimated_cost_usd": 0.5076,
     "billed_to_user": true,
     "model": "openai/gpt-6-sol"
   },
-  "validation_issues": [
-    {
-      "severity": "blocker",
-      "message": "requirement unverified: R28 \u2014 Use a modern, clean, appealing design with a light neutral page background, white rounded cards, subtle shadows, gentle hover lift, generous even spacing, and one consistent font. \u2014 the cited evidence '' does not verify it (Judged again with web_app/frontend/src/components/runtime/TableBlock.tsx, web_app/frontend/src/components/table/TableComponent.tsx, web_app/backend/main_api.py, web_app/backend/routers/recommendation.py, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The shown inline table styles establish white, rounded card-like surfaces and a subtle shadow, but do not establish the overall light-neutral page background, hover lift, generous even spacing, or consistent font across the app. The stylesheet and app-wide frontend styles were omitted, so these design requirements cannot be verified from the supplied excerpts.); implement the behaviour only if it is really absent: the citation is re-judged automatically"
-    },
-    {
-      "severity": "blocker",
-      "message": "requirement unverified: R29 \u2014 Use a soft indigo-to-sky-blue gradient on the banner. \u2014 the cited evidence 'web_app/frontend/src/pages/Recommendation.tsx: <header className=\"ds-hero tracker-hero\">' does not verify it (Judged again with web_app/frontend/src/components/table/TableComponent.tsx, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The page applies the banner class, but the stylesheet that could establish its requested gradient was not supplied. Inspect the CSS defining .tracker-hero or .ds-hero.); implement the behaviour only if it is really absent: the citation is re-judged automatically"
-    },
-    {
-      "severity": "blocker",
-      "message": "requirement unverified: R31 \u2014 The app has no authentication and no agents. \u2014 the cited evidence 'web_app/frontend/src/main_api.py: app = FastAPI( and web_app/frontend/src/App.tsx: function App() {' does not verify it (Judged again with web_app/frontend/src/components/runtime/TableBlock.tsx, web_app/frontend/src/components/table/TableComponent.tsx, web_app/backend/main_api.py, web_app/backend/routers/recommendation.py, web_app/frontend/src/pages/Recommendation.tsx, web_app/frontend/src/App.tsx shown: The shown API setup has no visible authentication middleware or agent routes, but omitted entry/configuration and API/frontend files prevent establishing that authentication or agents are absent from the running application. Inspect app entry points and routing/middleware configuration. [citation 1 (web_app/frontend/src/main_api.py): the cited source path is missing, excluded or ambiguous: the line is in web_app/backend/main_api.py line 17, not in the cited file; the citation must name the file the line is in]); implement the behaviour only if it is really absent: the citation is re-judged automatically"
-    }
-  ],
+  "validation_issues": [],
   "acceptance_matrix": {
     "Recommendation": {
       "route": true,
@@ -1833,6 +677,11 @@
   "runtime_files_not_removed_count": 0,
   "runtime_files_note": "",
   "output_files": [
+    {
+      "path": ".agent-trace/6ca974cd7fb34b9cb3f03fa5f1b6e6b2.json",
+      "size": 65627,
+      "source": "llm"
+    },
     {
       "path": ".agent-trace/715977fd342040a991fe620cf9760ca4.json",
       "size": 46002,
@@ -1906,7 +755,7 @@
     },
     {
       "path": "web_app/backend/pydantic_classes.py",
-      "size": 1102,
+      "size": 1166,
       "source": "generator",
       "llm_modified": true
     },
@@ -1928,7 +777,7 @@
     },
     {
       "path": "web_app/backend/sql_alchemy.py",
-      "size": 4207,
+      "size": 4271,
       "source": "generator",
       "llm_modified": true
     },
@@ -2105,7 +954,7 @@
     },
     {
       "path": "web_app/frontend/src/design-overrides.css",
-      "size": 7990,
+      "size": 8589,
       "source": "llm",
       "llm_modified": true
     },
@@ -2128,7 +977,7 @@
     },
     {
       "path": "web_app/frontend/src/pages/Recommendation.tsx",
-      "size": 12069,
+      "size": 13638,
       "source": "generator",
       "llm_modified": true
     },
@@ -2149,18 +998,18 @@
     }
   ],
   "output_summary": {
-    "total_files": 60,
+    "total_files": 61,
     "from_generator": 48,
-    "from_llm": 12,
+    "from_llm": 13,
     "generator_files_edited_by_llm": 13,
-    "total_bytes": 733087
+    "total_bytes": 801010
   },
   "tool_calls": [
     {
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/backend/pydantic_classes.py"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx"
       },
       "success": true,
       "status": "ok"
@@ -2178,15 +1027,6 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 1,
-      "tool": "read_file",
-      "input": {
         "path": "web_app/frontend/src/design-overrides.css"
       },
       "success": true,
@@ -2196,7 +1036,7 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/backend/sql_alchemy.py"
+        "path": "web_app/backend/pydantic_classes.py"
       },
       "success": true,
       "status": "ok"
@@ -2214,15 +1054,6 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/index.css"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 1,
-      "tool": "read_file",
-      "input": {
         "path": "web_app/frontend/src/components/runtime/TableBlock.tsx"
       },
       "success": true,
@@ -2232,25 +1063,26 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/index.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 1,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/components/runtime/FormBlock.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 1,
-      "tool": "read_file",
-      "input": {
         "path": "web_app/frontend/package.json"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 1,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py up",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 2,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/backend/sql_alchemy.py"
       },
       "success": true,
       "status": "ok"
@@ -2268,109 +1100,159 @@
       "turn": 2,
       "tool": "read_file",
       "input": {
+        "path": "web_app/frontend/src/index.tsx"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 2,
+      "tool": "search_in_files",
+      "input": {
+        "pattern": "Book.*Film.*Place|RecommendationCategory|categoryIcons",
+        "file_glob": "*.tsx"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 2,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py routes",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 2,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py req GET /health",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 3,
+      "tool": "read_file",
+      "input": {
         "path": "web_app/backend/routers/recommendation.py"
       },
       "success": true,
       "status": "ok"
     },
     {
-      "turn": 2,
+      "turn": 3,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/components/table/TableComponent.tsx",
-        "offset": 100,
-        "limit": 630
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 2,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py up"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 2,
-      "tool": "run_command",
-      "input": {
-        "command": "test -d web_app/frontend/node_modules && echo INSTALLED || echo MISSING; cat web_app/frontend/vite.config.ts"
+        "path": "web_app/backend/main_api.py"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 3,
-      "tool": "search_in_files",
+      "tool": "read_file",
       "input": {
-        "pattern": "onClick.*Edit|onClick.*Delete|handleDelete|handleSave|options\\.hideCreateButton|externalFilter|No data|No records",
-        "file_glob": "TableComponent.tsx"
+        "path": "web_app/frontend/src/components/runtime/FormBlock.tsx"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 3,
-      "tool": "run_command",
+      "tool": "read_file",
       "input": {
-        "command": "python .besser_probe.py routes"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 3,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py req GET /health"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 3,
-      "tool": "install_dependencies",
-      "input": {
-        "working_dir": "web_app/frontend"
+        "path": "web_app/frontend/src/components/runtime/bindingData.ts",
+        "offset": 315,
+        "limit": 80
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 4,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/components/table/TableComponent.tsx",
-        "offset": 730,
-        "limit": 1155
+        "path": "web_app/frontend/src/design-overrides.css",
+        "old_text": ".tracker-filter-panel { display: flex; align-items: center; flex-wrap: wrap; gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }",
+        "new_text": ".tracker-filter-panel { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }\n.tracker-filter-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--ds-space-md); width: 100%; }\n.tracker-filter-row .ds-label { min-width: 5rem; }\n.tracker-category-chip-icon { margin-right: calc(var(--ds-space-md) / 3); }"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 4,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "type Category = \"Book\" | \"Film\" | \"Place\" | \"Article\" | \"Recipe\" | \"Restaurant\" | \"Other\";\ntype Status = \"ToTry\" | \"Done\" | \"Dropped\";\ntype RecordItem = { id: number; title: string; category: Category; status: Status; note: string | null; added_on: string };\nconst categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];\nconst statuses: Status[] = [\"ToTry\", \"Done\", \"Dropped\"];\nconst categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\"\n<<truncated 306 of 806 chars, sha256 406324a1406e>>",
+        "new_text": "type Category = \"Book\" | \"Film\" | \"Place\" | \"Article\" | \"Recipe\" | \"Restaurant\" | \"Podcast\" | \"Product\" | \"App\" | \"Other\";\ntype Status = \"ToTry\" | \"Done\" | \"Dropped\";\ntype RecordItem = { id: number; title: string; category: Category; status: Status; note: string | null; added_on: string };\n// OpenAPI publishes the RecommendationCategory enum used by the backend create schema.\nconst modelCategories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Podcast\", \"Product\", \"A\n<<truncated 1305 of 1805 chars, sha256 e1d9e74bc870>>"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 4,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/backend/sql_alchemy.py",
+        "old_text": "    Restaurant = \"Restaurant\"\n    Other = \"Other\"",
+        "new_text": "    Restaurant = \"Restaurant\"\n    Podcast = \"Podcast\"\n    Product = \"Product\"\n    App = \"App\"\n    Other = \"Other\""
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 4,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/backend/pydantic_classes.py",
+        "old_text": "    Restaurant = \"Restaurant\"\n    Other = \"Other\"",
+        "new_text": "    Restaurant = \"Restaurant\"\n    Podcast = \"Podcast\"\n    Product = \"Product\"\n    App = \"App\"\n    Other = \"Other\""
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 5,
-      "tool": "modify_file",
+      "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";",
-        "new_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx"
       },
-      "success": false,
-      "status": "error"
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 5,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py down && python .besser_probe.py up && python .besser_probe.py routes && python .besser_probe.py req GET /health",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 5,
+      "tool": "validate_app",
+      "input": {},
+      "success": true,
+      "status": "ok"
     },
     {
       "turn": 6,
       "tool": "modify_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";",
-        "new_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";"
+        "old_text": "const tableOptions = {\n  showHeader: true, stripedRows: false, showPagination: true, rowsPerPage: 5,",
+        "new_text": "const createTableOptions = (categories: Category[]) => ({\n  showHeader: true, stripedRows: false, showPagination: true, rowsPerPage: 5,"
       },
-      "success": false,
-      "status": "error"
+      "success": true,
+      "status": "ok"
     },
     {
       "turn": 7,
@@ -2386,30 +1268,30 @@
       "tool": "modify_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";",
-        "new_text": "import { Link, useNavigate, useSearchParams } from \"react-router-dom\";"
+        "old_text": "  ],\n};\n\nconst useRecommendations",
+        "new_text": "  ],\n});\n\nconst useRecommendations"
       },
-      "success": false,
-      "status": "error"
+      "success": true,
+      "status": "ok"
     },
     {
       "turn": 9,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "  const [searchParams, setSearchParams] = useSearchParams();\n  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";",
+        "new_text": "  const [searchParams, setSearchParams] = useSearchParams();\n  const categories = useCategories();\n  const tableOptions = useMemo(() => createTableOptions(categories), [categories]);\n  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 10,
-      "tool": "replace_file_lines",
+      "tool": "modify_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "read_id": "ac64dfe72acc:15",
-        "start_line": 54,
-        "end_line": 122,
-        "new_text": "const Recommendation: React.FC<{ view?: \"home\" | \"list\" | \"add\" }> = ({ view = \"list\" }) => {\n  const navigate = useNavigate();\n  const [searchParams, setSearchParams] = useSearchParams();\n  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";\n  const { rows, loading, error } = useRecommendations();\n  const chartColors = useMemo(() => {\n    if (typeof window === \"undefined\") return {};\n    const palette = window.getComputedStyle(document.documentElement);\n    re\n<<truncated 7519 of 8019 chars, sha256 ec807507d894>>"
+        "old_text": "    return Object.fromEntries(categories.map(name => [name, palette.getPropertyValue(chartColorProperties[name]).trim()]));\n  }, []);\n  const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);",
+        "new_text": "    return Object.fromEntries(categories.map(name => [name, palette.getPropertyValue(chartColorProperties[name]).trim()]));\n  }, [categories]);\n  const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [categories, rows]);"
       },
       "success": true,
       "status": "ok"
@@ -2418,70 +1300,85 @@
       "turn": 11,
       "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/design-overrides.css",
-        "old_text": ".tracker-filter-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }\n.tracker-filter-panel .ds-field { margin: 0; }",
-        "new_text": ".tracker-filter-panel { display: flex; align-items: center; flex-wrap: wrap; gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }\n.tracker-filter-panel .ds-label { margin: 0; }\n.tracker-category-chips { display: flex; align-items: center; flex-wrap: wrap; gap: calc(var(--ds-space-md) / 2); }\n.tracker-category-chip.ds-btn { border: 1px solid var(--ds-border); border-radius: 999px; background: var(--ds-surface); color: var(--ds-muted); padding: calc(var(--ds-space-md) / 2) var(--ds-space-md); \n<<truncated 464 of 964 chars, sha256 972b193307a0>>"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "data={chartData} labelField=\"name\" dataField=\"count\"",
+        "new_text": "data={chartData} labelField=\"name\" dataField=\"count\""
+      },
+      "success": false,
+      "status": "error"
+    },
+    {
+      "turn": 12,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "offset": 115,
+        "limit": 48
       },
       "success": true,
       "status": "ok"
     },
     {
-      "turn": 12,
+      "turn": 13,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter recommendations\">\n              <div className=\"tracker-category-chips\" aria-label=\"Category chips\">\n                {[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category === name ? \" active\" : \"\"}`} aria-pressed={category === name} onClick={() => updateFilters(name, status)}>{name || \"All\"}</button>)}\n              </div>\n             \n<<truncated 500 of 1000 chars, sha256 e0c2aa3f7e67>>",
+        "new_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter recommendations\">\n              <div className=\"tracker-filter-row\">\n                <span className=\"ds-label\" id=\"category-filter-label\">Category</span>\n                <div className=\"tracker-category-chips\" role=\"group\" aria-labelledby=\"category-filter-label\">\n                  {[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category =\n<<truncated 896 of 1396 chars, sha256 bfd1adb91aca>>"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 14,
       "tool": "run_command",
       "input": {
         "command": "npm run build && npx tsc --noEmit",
         "working_dir": "web_app/frontend",
         "timeout": 120
       },
-      "success": true,
-      "status": "ok"
+      "success": false,
+      "status": "error"
     },
     {
-      "turn": 12,
-      "tool": "run_command",
+      "turn": 15,
+      "tool": "install_dependencies",
       "input": {
-        "command": "python .besser_probe.py req POST /recommendation/ '{\"title\":\"Example recipe\",\"category\":\"Recipe\",\"status\":\"ToTry\",\"added_on\":\"2026-11-20\",\"note\":\"Try this weekend\"}'"
+        "working_dir": "web_app/frontend"
       },
       "success": true,
       "status": "ok"
     },
     {
-      "turn": 12,
-      "tool": "validate_app",
-      "input": {},
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 13,
+      "turn": 15,
       "tool": "run_command",
       "input": {
-        "command": "python .besser_probe.py req GET /recommendation/1/"
+        "command": "python .besser_probe.py req POST /recommendation/ '{\"title\":\"Try a podcast\",\"category\":\"Podcast\",\"status\":\"ToTry\",\"added_on\":\"2026-11-20\"}' && python .besser_probe.py req GET /recommendation/",
+        "working_dir": "."
       },
       "success": true,
       "status": "ok"
     },
     {
-      "turn": 13,
+      "turn": 15,
       "tool": "test_api",
       "input": {
-        "scenario_id": "recommendation-crud-seven-categories",
+        "scenario_id": "recommendation-ten-categories-crud",
         "requests": [
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Article to read",
-              "category": "Article",
+              "title": "Listen later",
+              "category": "Podcast",
               "status": "ToTry",
-              "added_on": "2026-11-20",
-              "note": "Worth a look"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Article",
+              "category": "Podcast",
               "status": "ToTry",
-              "added_on": "2026-11-20"
+              "title": "Listen later"
             }
           },
           {
@@ -2489,24 +1386,23 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "title": "Article to read",
-              "note": "Worth a look"
+              "category": "Podcast",
+              "status": "ToTry"
             }
           },
           {
             "method": "PUT",
             "path": "/recommendation/{{0.id}}/",
             "json": {
-              "title": "Article read",
-              "category": "Article",
+              "title": "Listen later",
+              "category": "Product",
               "status": "Done",
-              "added_on": "2026-11-20",
-              "note": "Excellent"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "status": "Done",
-              "title": "Article read"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
@@ -2514,22 +1410,22 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "status": "Done",
-              "note": "Excellent"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Dinner",
-              "category": "Restaurant",
+              "title": "Try an app",
+              "category": "App",
               "status": "Dropped",
               "added_on": "2026-11-19"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
+              "category": "App",
               "status": "Dropped"
             }
           },
@@ -2543,7 +1439,7 @@
             "path": "/recommendation/{{0.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "title": "Article read"
+              "category": "Product"
             }
           },
           {
@@ -2552,155 +1448,13 @@
             "expected_status": 404
           },
           {
-            "method": "DELETE",
-            "path": "/recommendation/{{4.id}}/",
-            "expected_status": 200
-          }
-        ]
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 13,
-      "tool": "test_api",
-      "input": {
-        "scenario_id": "recommendation-valid-category-literals",
-        "requests": [
-          {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Book example",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Book"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Film example",
-              "category": "Film",
+              "title": "Invalid category",
+              "category": "Magazine",
               "status": "Done",
               "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Film"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Place example",
-              "category": "Place",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Place"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Recipe example",
-              "category": "Recipe",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Recipe"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Other example",
-              "category": "Other",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_fields": {
-              "category": "Other"
-            }
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/count/",
-            "expected_fields": {
-              "count": 5
-            }
-          }
-        ]
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 13,
-      "tool": "test_api",
-      "input": {
-        "scenario_id": "recommendation-invalid-inputs",
-        "requests": [
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "Podcast",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "Product",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Invalid",
-              "category": "App",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "   ",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Missing date",
-              "category": "Book",
-              "status": "ToTry"
             },
             "expected_status": 422
           },
@@ -2710,7 +1464,7 @@
             "json": {
               "title": "Invalid status",
               "category": "Book",
-              "status": "Later",
+              "status": "Pending",
               "added_on": "2026-11-20"
             },
             "expected_status": 422
@@ -2721,142 +1475,106 @@
       "status": "ok"
     },
     {
-      "turn": 14,
-      "tool": "task_list",
-      "input": {
-        "action": "mixed",
-        "existing": true,
-        "done_ids": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "evidence": [
-          {
-            "id": 1,
-            "path": "web_app/frontend/src/App.tsx",
-            "quote": "<Route path=\"/\" element={<Recommendation view=\"home\" />} />\n            <Route path=\"/recommendation\" element={<Recommendation view=\"list\" />} />\n            <Route path=\"/recommendation/new\" element={<Recommendation view=\"add\" />} />"
-          },
-          {
-            "id": 2,
-            "path": "web_app/backend/pydantic_classes.py",
-            "quote": "class RecommendationCategory(Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\""
-          },
-          {
-            "id": 3,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);"
-          },
-          {
-            "id": 4,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "{[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category === name ? \" active\" : \"\"}`} aria-pressed={category === name} onClick={() => setSearchParams(name ? { category: name } : {})}>{name || \"All\"}</button>)}"
-          },
-          {
-            "id": 5,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "<FormBlock id=\"add-recommendation-form\" className=\"ds-card tracker-form\" endpoint=\"/recommendation/\" entity=\"Recommendation\" submitLabel=\"Save\" submitClassName=\"ds-btn ds-btn-primary\" onSaved={() => navigate(\"/recommendation\")} fields={["
-          },
-          {
-            "id": 6,
-            "path": "web_app/frontend/src/design-overrides.css",
-            "quote": ".tracker-category-chip.ds-btn { border: 1px solid var(--ds-border); border-radius: 999px; background: var(--ds-surface); color: var(--ds-muted); padding: calc(var(--ds-space-md) / 2) var(--ds-space-md); font-weight: 600; cursor: pointer; transition: transform .2s, background-color .2s, box-shadow .2s; }"
-          }
-        ]
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
       "turn": 15,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py down"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 17,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 17,
-      "tool": "search_in_files",
-      "input": {
-        "pattern": "tracker-hero|tracker-category-card|tracker-section|ds-card",
-        "file_glob": "*.css"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 17,
-      "tool": "task_list",
-      "input": {
-        "action": "list"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 18,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/backend/pydantic_classes.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 18,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/App.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 18,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/backend/sql_alchemy.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 18,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/design-overrides.css"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 19,
       "tool": "validate_app",
       "input": {},
       "success": true,
       "status": "ok"
     },
     {
-      "turn": 20,
+      "turn": 16,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "offset": 1,
+        "limit": 105
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 16,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/design-overrides.css",
+        "offset": 72,
+        "limit": 25
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 16,
       "tool": "run_command",
       "input": {
-        "command": "npm run build",
+        "command": "npm run build && npx tsc --noEmit",
         "working_dir": "web_app/frontend",
         "timeout": 120
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 16,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py req GET /recommendation/1/ && python .besser_probe.py req GET /openapi.json | python -c 'import sys,json; output=sys.stdin.read(); print(output[:1000])'",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 17,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "const chartColorProperties: Record<Category, string> = { Book: \"--tracker-indigo\", Film: \"--tracker-sky\", Place: \"--tracker-teal\", Article: \"--tracker-amber\", Recipe: \"--tracker-coral\", Restaurant: \"--tracker-violet\", Podcast: \"--tracker-indigo\", Product: \"--tracker-sky\", App: \"--tracker-teal\", Other: \"--tracker-slate\" };",
+        "new_text": "const chartColorProperties: Record<Category, string> = { Book: \"--tracker-indigo\", Film: \"--tracker-sky\", Place: \"--tracker-teal\", Article: \"--tracker-amber\", Recipe: \"--tracker-coral\", Restaurant: \"--tracker-violet\", Podcast: \"--tracker-slate\", Product: \"--tracker-pink\", App: \"--tracker-emerald\", Other: \"--tracker-rose\" };"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 18,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/design-overrides.css",
+        "old_text": "  --tracker-slate: #64748b;\n}",
+        "new_text": "  --tracker-slate: #64748b;\n  --tracker-pink: #ec4899;\n  --tracker-emerald: #10b981;\n  --tracker-rose: #f43f5e;\n}"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 19,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/design-overrides.css",
+        "old_text": ".tracker-category-card:nth-child(7n+1) { --category-color: var(--tracker-indigo); }\n.tracker-category-card:nth-child(7n+2) { --category-color: var(--tracker-sky); }\n.tracker-category-card:nth-child(7n+3) { --category-color: var(--tracker-teal); }\n.tracker-category-card:nth-child(7n+4) { --category-color: var(--tracker-amber); }\n.tracker-category-card:nth-child(7n+5) { --category-color: var(--tracker-coral); }\n.tracker-category-card:nth-child(7n+6) { --category-color: var(--tracker-violet); }\n.tr\n<<truncated 79 of 579 chars, sha256 4d7fa692808d>>",
+        "new_text": ".tracker-category-card:nth-child(10n+1) { --category-color: var(--tracker-indigo); }\n.tracker-category-card:nth-child(10n+2) { --category-color: var(--tracker-sky); }\n.tracker-category-card:nth-child(10n+3) { --category-color: var(--tracker-teal); }\n.tracker-category-card:nth-child(10n+4) { --category-color: var(--tracker-amber); }\n.tracker-category-card:nth-child(10n+5) { --category-color: var(--tracker-coral); }\n.tracker-category-card:nth-child(10n+6) { --category-color: var(--tracker-violet);\n<<truncated 339 of 839 chars, sha256 8fa1af0dda48>>"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 20,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "offset": 108,
+        "limit": 50
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 21,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className=\"ds-badge\">{row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)",
+        "new_text": "recent.map(row => <li key={row.id}><strong>{row.title}</strong><span className=\"ds-badge\"><span aria-hidden=\"true\">{categoryIcons[row.category]}</span> {row.category}</span><time dateTime={row.added_on}>{row.added_on}</time></li>)"
       },
       "success": true,
       "status": "ok"
@@ -2866,24 +1584,17 @@
       "tool": "modify_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter by category\">\n              <span className=\"ds-label\">Category</span>\n              <div className=\"tracker-category-chips\">",
-        "new_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter recommendations by category\">\n              <div className=\"tracker-category-chips\" aria-label=\"Category chips\">"
+        "old_text": "categories.map(item => <option key={item} value={item}>{item}</option>)",
+        "new_text": "categories.map(item => <option key={item} value={item}>{categoryIcons[item]} {item}</option>)"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 23,
-      "tool": "validate_app",
-      "input": {},
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 24,
       "tool": "run_command",
       "input": {
-        "command": "npx tsc --noEmit && npm run build",
+        "command": "npm run build && npx tsc --noEmit",
         "working_dir": "web_app/frontend",
         "timeout": 120
       },
@@ -2891,16 +1602,110 @@
       "status": "ok"
     },
     {
-      "turn": 26,
+      "turn": 24,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/design.css"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "offset": 107,
+        "limit": 48
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 24,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "offset": 10,
+        "limit": 88
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 24,
+      "tool": "run_command",
+      "input": {
+        "command": "git status --short && python .besser_probe.py req GET /recommendation/1/ && python .besser_probe.py down",
+        "working_dir": "."
+      },
+      "success": false,
+      "status": "error"
+    },
+    {
+      "turn": 24,
+      "tool": "test_api",
+      "input": {
+        "action": "run",
+        "scenario_id": "recommendation-ten-categories-crud"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 24,
+      "tool": "validate_app",
+      "input": {},
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 25,
+      "tool": "task_list",
+      "input": {
+        "action": "done",
+        "ids": [
+          1,
+          2
+        ],
+        "evidence": [
+          {
+            "id": 1,
+            "path": "web_app/frontend/src/pages/Recommendation.tsx",
+            "quote": "const categories = useCategories();\n  const tableOptions = useMemo(() => createTableOptions(categories), [categories]);\n  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";"
+          },
+          {
+            "id": 1,
+            "path": "web_app/frontend/src/pages/Recommendation.tsx",
+            "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [categories, rows]);"
+          },
+          {
+            "id": 2,
+            "path": "web_app/frontend/src/pages/Recommendation.tsx",
+            "quote": "const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);"
+          },
+          {
+            "id": 2,
+            "path": "web_app/frontend/src/pages/Recommendation.tsx",
+            "quote": "{[\"\", ...statuses].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${status === name ? \" active\" : \"\"}`} aria-pressed={status === name} onClick={() => updateFilters(category, name)}>{name === \"ToTry\" ? \"To try\" : name || \"All\"}</button>)"
+          }
+        ]
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 26,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py req GET /recommendation/1/ && python .besser_probe.py down",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 28,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/backend/pydantic_classes.py"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 28,
       "tool": "read_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx"
@@ -2909,41 +1714,19 @@
       "status": "ok"
     },
     {
-      "turn": 26,
+      "turn": 28,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/design-overrides.css"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 26,
-      "tool": "task_list",
-      "input": {
-        "action": "list"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 27,
-      "tool": "modify_file",
-      "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";\n  const { rows, loading, error } = useRecommendations();",
-        "new_text": "  const category = categories.find(name => name === searchParams.get(\"category\")) || \"\";\n  const status = statuses.find(name => name === searchParams.get(\"status\")) || \"\";\n  const updateFilters = (nextCategory: string, nextStatus: string) => {\n    const params: Record<string, string> = {};\n    if (nextCategory) params.category = nextCategory;\n    if (nextStatus) params.status = nextStatus;\n    setSearchParams(params);\n  };\n  const { rows, loading, error } = useRecommendations();"
+        "path": "web_app/frontend/package.json"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 28,
-      "tool": "modify_file",
+      "tool": "task_list",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "  const filtered = useMemo(() => (row: RecordItem) => !category || row.category === category, [category]);",
-        "new_text": "  const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);"
+        "action": "list"
       },
       "success": true,
       "status": "ok"
@@ -2953,124 +1736,76 @@
       "tool": "modify_file",
       "input": {
         "path": "web_app/frontend/src/pages/Recommendation.tsx",
-        "old_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter recommendations by category\">\n              <div className=\"tracker-category-chips\" aria-label=\"Category chips\">\n                {[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category === name ? \" active\" : \"\"}`} aria-pressed={category === name} onClick={() => setSearchParams(name ? { category: name } : {})}>{name || \"All\"}</button>)}\n  \n<<truncated 37 of 537 chars, sha256 c03e336f81be>>",
-        "new_text": "            <div className=\"ds-card tracker-filter-panel\" role=\"group\" aria-label=\"Filter recommendations\">\n              <div className=\"tracker-category-chips\" aria-label=\"Category chips\">\n                {[\"\", ...categories].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${category === name ? \" active\" : \"\"}`} aria-pressed={category === name} onClick={() => updateFilters(name, status)}>{name || \"All\"}</button>)}\n              </div>\n             \n<<truncated 500 of 1000 chars, sha256 e0c2aa3f7e67>>"
+        "old_text": "          setCategories(values.filter((value): value is Category => value in categoryIcons));",
+        "new_text": "          setCategories(values);"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 30,
-      "tool": "validate_app",
-      "input": {},
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "type Category = \"Book\" | \"Film\" | \"Place\" | \"Article\" | \"Recipe\" | \"Restaurant\" | \"Podcast\" | \"Product\" | \"App\" | \"Other\";",
+        "new_text": "type Category = string;"
+      },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 31,
-      "tool": "run_command",
+      "tool": "modify_file",
       "input": {
-        "command": "npx tsc --noEmit -p tsconfig.json",
-        "working_dir": "web_app/frontend",
-        "timeout": 120
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", Podcast: \"\ud83c\udfa7\", Product: \"\ud83d\udce6\", App: \"\ud83d\udcf1\", Other: \"\u2728\" };",
+        "new_text": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", Podcast: \"\ud83c\udfa7\", Product: \"\ud83d\udce6\", App: \"\ud83d\udcf1\", Other: \"\u2728\" };\nconst iconFor = (category: Category) => categoryIcons[category] || \"\u2728\";"
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 32,
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "palette.getPropertyValue(chartColorProperties[name]).trim()",
+        "new_text": "palette.getPropertyValue(chartColorProperties[name] || \"--tracker-slate\").trim()"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 33,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 33,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/App.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 33,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/design-overrides.css"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 33,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/components/runtime/FormBlock.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 33,
-      "tool": "task_list",
-      "input": {
-        "action": "list"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "{categoryIcons[name]}",
+        "new_text": "{iconFor(name)}",
+        "replace_all": true
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 34,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/backend/pydantic_classes.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 34,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/backend/sql_alchemy.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 34,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/index.tsx"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 34,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/backend/main_api.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 34,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/frontend/src/components/charts/BarChartComponent.tsx"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "{categoryIcons[row.category]}",
+        "new_text": "{iconFor(row.category)}"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 35,
-      "tool": "validate_app",
-      "input": {},
+      "tool": "modify_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "{categoryIcons[item]}",
+        "new_text": "{iconFor(item)}"
+      },
       "success": true,
       "status": "ok"
     },
@@ -3078,9 +1813,9 @@
       "turn": 36,
       "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/components/runtime/FormBlock.tsx",
-        "old_text": "    case \"bool\":\n    case \"boolean\":\n      return raw !== null && text !== \"false\";\n    default:",
-        "new_text": "    case \"bool\":\n    case \"boolean\":\n      return raw !== null && text !== \"false\";\n    case \"enum\":\n    case \"date\":\n      return text;\n    default:"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "{categoryIcons[name as Category]}",
+        "new_text": "{iconFor(name)}"
       },
       "success": true,
       "status": "ok"
@@ -3089,7 +1824,7 @@
       "turn": 37,
       "tool": "run_command",
       "input": {
-        "command": "npx tsc --noEmit",
+        "command": "if test -x node_modules/.bin/tsc; then node_modules/.bin/tsc --noEmit; else npx --yes --package typescript@4.9.5 tsc --noEmit; fi",
         "working_dir": "web_app/frontend",
         "timeout": 120
       },
@@ -3098,68 +1833,6 @@
     },
     {
       "turn": 37,
-      "tool": "test_api",
-      "input": {
-        "scenario_id": "recommendation-create-valid-invalid",
-        "requests": [
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "A book",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": [
-              200,
-              201
-            ],
-            "expected_fields": {
-              "title": "A book",
-              "category": "Book",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            }
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/{{0.id}}",
-            "expected_status": 200,
-            "expected_fields": {
-              "title": "A book",
-              "category": "Book"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Wrong category",
-              "category": "Invalid",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "  ",
-              "category": "Film",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          }
-        ]
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 38,
       "tool": "validate_app",
       "input": {},
       "success": true,
@@ -3176,11 +1849,21 @@
     "renamed": [],
     "changes": []
   },
+  "fix_run": {
+    "detected": true,
+    "target": "the Recommendation feature",
+    "kind": "entity",
+    "entities": [
+      "Recommendation"
+    ],
+    "target_resolved": true,
+    "target_message": null
+  },
   "secret_findings": 0,
   "run": {
     "mode": "modify",
     "mode_reason": "edit of a previous result",
-    "base_run_id": "fdda13e59ca748e488d6ed770c53e508",
+    "base_run_id": "6ca974cd7fb34b9cb3f03fa5f1b6e6b2",
     "target": "web_app",
     "target_decided_by": "not decided",
     "frontend_requested": true,
@@ -3196,232 +1879,77 @@
     },
     "stopped_by": "finished",
     "stop_message": null,
-    "outcome": "completed_with_blockers",
+    "outcome": "completed",
     "warnings": [],
-    "duration_seconds": 322.2,
+    "duration_seconds": 194.1,
     "phase_seconds": {
-      "select": 11.5,
-      "plan": 6.3,
-      "customise": 65.6,
-      "validate": 238.7
+      "select": 7.4,
+      "plan": 5.2,
+      "customise": 117.3,
+      "validate": 64.1
     },
-    "estimated_cost_usd": 0.5969,
+    "estimated_cost_usd": 0.5076,
     "counts": {
-      "turns": 39,
-      "tool_calls": 73,
+      "turns": 37,
+      "tool_calls": 70,
       "files_written": 0,
-      "files_edited": 3,
-      "blockers": 3
+      "files_edited": 4,
+      "blockers": 0
     },
     "besser_version": "8.10.1",
     "besser_build": "9deaedacf",
-    "request_chars": 4337
+    "request_chars": 5143
   },
   "verification": {
     "verified": [
       {
         "kind": "requirement",
         "id": "R1",
-        "what": "Create a web app called \u201cRecommendations Tracker\u201d to keep recommendations in one place, organised by type.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/App.tsx: <span className=\"tracker-brand\">Recommendations Tracker</span> and web_app/frontend/src/pages/Recommendation.tsx: const Recommendation: React.FC<{ \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "api_workflow",
-        "id": "recommendation-crud-seven-categories",
-        "what": "Test workflow 'recommendation-crud-seven-categories'",
-        "how": "9 request(s) run against the app: POST /recommendation/, GET /recommendation/{{0.id}}/, PUT /recommendation/{{0.id}}/, GET /recommendation/{{0.id}}/, POST /recommendation/, GET /recommendation/, DELETE /recommendation/{{0.id}}/, GET /recommendation/{{0.id}}/, DELETE /recommendation/{{4.id}}/",
+        "what": "Every place in the frontend that lists categories shows all 10 model categories: Book, Film, Place, Article, Recipe, Restaurant, Podcast, Product, App, and Other.",
+        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const modelCategories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Podcast\", \"Product\", \"App\", \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
         "why": null
       },
       {
         "kind": "requirement",
         "id": "R2",
-        "what": "Provide exactly three screens: Home, Recommendations, and Add recommendation.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/App.tsx: <Route path=\"/\" element={<Recommendation view=\"home\" />} /> and web_app/frontend/src/App.tsx: <Route path=\"/recommendation\" element={<Recommendation \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "api_workflow",
-        "id": "recommendation-valid-category-literals",
-        "what": "Test workflow 'recommendation-valid-category-literals'",
-        "how": "6 request(s) run against the app: POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, GET /recommendation/count/",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R3",
-        "what": "Show a navigation bar on all screens with the app title on the left and exactly three items on the right: Home, Recommendations, and Add recommendation, with no other or duplicate links.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/App.tsx: <span className=\"tracker-brand\">Recommendations Tracker</span> and web_app/frontend/src/App.tsx: <NavLink to=\"/\" end className={({ isActive }) => \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "api_workflow",
-        "id": "recommendation-invalid-inputs",
-        "what": "Test workflow 'recommendation-invalid-inputs'",
-        "how": "6 request(s) run against the app: POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R4",
-        "what": "Highlight the current page in the navigation bar.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/App.tsx: <NavLink to=\"/\" end className={({ isActive }) => `tracker-nav-link${isActive ? \" active\" : \"\"}`}>Home</NavLink> and web_app/frontend/src/App.tsx: \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "api_workflow",
-        "id": "recommendation-create-valid-invalid",
-        "what": "Test workflow 'recommendation-create-valid-invalid'",
-        "how": "4 request(s) run against the app: POST /recommendation/, GET /recommendation/{{0.id}}, POST /recommendation/, POST /recommendation/",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R5",
-        "what": "Model one class named Recommendation, with no other classes or associations.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: class Recommendation(Base):; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R6",
-        "what": "A Recommendation has a required title of type str.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: title: Mapped_[str] = mapped_column(String_(100), nullable=False) and web_app/backend/pydantic_classes.py: title: str = \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R7",
-        "what": "A Recommendation has a required category from RecommendationCategory: Book, Film, Place, Article, Recipe, Restaurant, or Other.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: class RecommendationCategory(enum.Enum): and web_app/backend/sql_alchemy.py: Other = \"Other\" and web_app/backend/sql_alchemy.py: \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R8",
-        "what": "A Recommendation has a required status from RecommendationStatus: ToTry, Done, or Dropped.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: status: Mapped_[RecommendationStatus] = mapped_column(Enum(RecommendationStatus), nullable=False) and \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R9",
-        "what": "A Recommendation may have an optional note of type str.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: note: Mapped_[Optional_[str]] = mapped_column(String_(100), nullable=True) and web_app/backend/pydantic_classes.py: note: Optional[str] = \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R10",
-        "what": "A Recommendation has a required added_on date.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/sql_alchemy.py: added_on: Mapped_[dt_date] = mapped_column(Date_, nullable=False) and web_app/backend/pydantic_classes.py: added_on: date; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R11",
-        "what": "The Home screen banner shows the title \u201cRecommendations Tracker\u201d and subtitle \u201cAll your recommendations, organised by type\u201d.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: <div><h1 className=\"ds-heading\">Recommendations Tracker</h1><p>All your recommendations, organised by type</p>; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R12",
-        "what": "The Home screen banner shows the total number of recommendations.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: <div className=\"tracker-total\"><strong>{loading ? \"\u2026\" : rows.length}</strong><span>Total recommendations</span></div>; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R13",
-        "what": "The Home screen banner has one \u201cAdd recommendation\u201d button, spaced clearly from the text.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: <Link className=\"ds-btn ds-btn-primary tracker-hero-action\" to=\"/recommendation/new\">Add recommendation</Link>; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R14",
-        "what": "The Home screen has a \u201cBrowse by category\u201d section with one card for each of the seven categories: Book, Film, Place, Article, Recipe, Restaurant, and Other.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"]; and \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R15",
-        "what": "Each category card shows an icon, the category name, the number of recommendations, and the counts of To try and Done recommendations.",
+        "what": "Each of the 10 categories has an icon wherever categories are listed in the frontend.",
         "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
         "why": null
       },
       {
         "kind": "requirement",
-        "id": "R16",
-        "what": "Clicking a category card opens the Recommendations screen filtered to that category.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: <Link key={name} className=\"ds-card tracker-category-card\" to={`/recommendation?category=${encodeURIComponent(name)}`}>; Found in the source; screens: not run (the frontend builds)",
+        "id": "R3",
+        "what": "Where possible, category chips read their values from the RecommendationCategory model rather than a hardcoded list.",
+        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: axios.get<{ components?: { schemas?: { RecommendationCategory?: { enum?: string[] } } } }>(backendUrl(\"/openapi.json\")); Found in the source; screens: not run (the frontend builds)",
         "why": null
       },
       {
         "kind": "requirement",
-        "id": "R17",
-        "what": "The Home screen has one \u201cRecently added\u201d section, shown once, containing the last five recommendations with their title, category, and date.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const recent = useMemo(() => [...rows].sort((a, b) => b.id - a.id).slice(0, 5), [rows]); and \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
+        "id": "R4",
+        "what": "Replace the Status dropdown on the Recommendations page with status chips for All, To try, Done, and Dropped, styled like the category chips.",
+        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: {[\"\", ...statuses].map(name => <button key={name || \"all\"} type=\"button\" className={`ds-btn tracker-category-chip${status === name ? \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
         "why": null
       },
       {
         "kind": "requirement",
-        "id": "R18",
-        "what": "When there are no recommendations, the Recently added section shows a friendly message.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: <div className=\"ds-card\">{loading ? <p className=\"ds-notice\" role=\"status\">Loading recommendations\u2026</p> : error ? <p \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
+        "id": "R5",
+        "what": "The category and status chip rows combine to filter the Recommendations table.",
+        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
         "why": null
       },
       {
-        "kind": "requirement",
-        "id": "R19",
-        "what": "The Home screen has a vertical bar chart titled \u201cDistribution by category\u201d.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: {loading ? <p className=\"ds-notice\" role=\"status\">Loading chart\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Chart data is \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R20",
-        "what": "The category chart always shows one bar for each of the seven categories, including categories with zero recommendations.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R21",
-        "what": "Each chart bar has a different colour and shows its count above the bar.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: {loading ? <p className=\"ds-notice\" role=\"status\">Loading chart\u2026</p> : error ? <p className=\"ds-notice\" role=\"alert\">Chart data is \u2026[truncated]; Found in the source; screens: not run (the frontend builds)",
+        "kind": "api_workflow",
+        "id": "recommendation-ten-categories-crud",
+        "what": "Test workflow 'recommendation-ten-categories-crud'",
+        "how": "10 request(s) run against the app: POST /recommendation/, GET /recommendation/{{0.id}}/, PUT /recommendation/{{0.id}}/, GET /recommendation/{{0.id}}/, POST /recommendation/, GET /recommendation/, DELETE /recommendation/{{0.id}}/, GET /recommendation/{{0.id}}/, POST /recommendation/, POST /recommendation/",
         "why": null
       }
     ],
-    "notVerified": [
-      {
-        "kind": "requirement",
-        "id": "R28",
-        "what": "Use a modern, clean, appealing design with a light neutral page background, white rounded cards, subtle shadows, gentle hover lift, generous even spacing, and one consistent font.",
-        "how": null,
-        "why": "the check could not confirm it in the delivered code"
-      },
-      {
-        "kind": "requirement",
-        "id": "R29",
-        "what": "Use a soft indigo-to-sky-blue gradient on the banner.",
-        "how": null,
-        "why": "the check could not confirm it in the delivered code"
-      },
-      {
-        "kind": "requirement",
-        "id": "R31",
-        "what": "The app has no authentication and no agents.",
-        "how": null,
-        "why": "the check could not confirm it in the delivered code"
-      }
-    ],
+    "notVerified": [],
     "shippedUnenforced": [],
     "counts": {
-      "verified": 34,
-      "notVerified": 3,
+      "verified": 6,
+      "notVerified": 0,
       "shippedUnenforced": 0
     }
   },

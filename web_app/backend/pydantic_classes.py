@@ -15,6 +15,9 @@ class RecommendationCategory(Enum):
     Article = "Article"
     Recipe = "Recipe"
     Restaurant = "Restaurant"
+    Podcast = "Podcast"
+    Product = "Product"
+    App = "App"
     Other = "Other"
 
 class RecommendationStatus(Enum):
