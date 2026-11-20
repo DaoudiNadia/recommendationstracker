@@ -13,8 +13,11 @@ class RecommendationCategory(Enum):
     Film = "Film"
     Place = "Place"
     Article = "Article"
-    Recipe = "Recipe"
     Restaurant = "Restaurant"
+    Podcast = "Podcast"
+    Product = "Product"
+    Recipe = "Recipe"
+    App = "App"
     Other = "Other"
 
 class RecommendationStatus(Enum):

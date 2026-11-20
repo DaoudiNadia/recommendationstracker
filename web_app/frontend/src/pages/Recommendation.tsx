@@ -7,13 +7,13 @@ import { BarChartComponent } from "../components/charts/BarChartComponent";
 import { backendUrl } from "../components/runtime/bindingData";
 import { useDataVersion } from "../components/runtime/dataVersion";
 
-type Category = "Book" | "Film" | "Place" | "Article" | "Recipe" | "Restaurant" | "Other";
+type Category = "Book" | "Film" | "Place" | "Article" | "Restaurant" | "Podcast" | "Product" | "Recipe" | "App" | "Other";
 type Status = "ToTry" | "Done" | "Dropped";
 type RecordItem = { id: number; title: string; category: Category; status: Status; note: string | null; added_on: string };
-const categories: Category[] = ["Book", "Film", "Place", "Article", "Recipe", "Restaurant", "Other"];
+const categories: Category[] = ["Book", "Film", "Place", "Article", "Restaurant", "Podcast", "Product", "Recipe", "App", "Other"];
 const statuses: Status[] = ["ToTry", "Done", "Dropped"];
-const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Recipe: "🍲", Restaurant: "🍽️", Other: "✨" };
-const categoryColors: Record<Category, string> = { Book: "var(--tracker-indigo)", Film: "var(--tracker-sky)", Place: "var(--tracker-teal)", Article: "var(--tracker-amber)", Recipe: "var(--tracker-coral)", Restaurant: "var(--tracker-violet)", Other: "var(--tracker-slate)" };
+const categoryIcons: Record<Category, string> = { Book: "📚", Film: "🎬", Place: "📍", Article: "📰", Restaurant: "🍽️", Podcast: "🎙️", Product: "🎁", Recipe: "🍲", App: "📱", Other: "✨" };
+const categoryColors: Record<Category, string> = { Book: "var(--tracker-indigo)", Film: "var(--tracker-sky)", Place: "var(--tracker-teal)", Article: "var(--tracker-amber)", Restaurant: "var(--tracker-violet)", Podcast: "var(--tracker-coral)", Product: "var(--tracker-slate)", Recipe: "var(--tracker-coral)", App: "var(--tracker-sky)", Other: "var(--tracker-slate)" };
 const tableOptions = {
   showHeader: true, stripedRows: false, showPagination: true, rowsPerPage: 5,
   actionButtons: true, hideCreateButton: true,

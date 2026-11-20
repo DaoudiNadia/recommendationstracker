@@ -1,5 +1,5 @@
 {
-  "instructions": "## Assistant's notes (may be inaccurate)\n\nUse these only for choices the user confirmed in the conversation that are missing from their request below. Never add a feature, database, framework, tool or deployment step that is not in the user's request; where these notes disagree with it, the user's request wins.\n\nAdd the new categories to the existing web app so they are included.\n\n## The user's original request, verbatim\n\nThis is the authority. Where the summary above is shorter or differs, this text wins.\n\nCreate a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Article, Recipe, Restaurant, Other (required)\nstatus: enumeration RecommendationStatus with values ToTry, Done, Dropped (required)\nnote: str (optional)\nadded_on: date (required)\nGUI diagram: three screens, Home (main page), Recommendations and Add recommendation.\n\nNavigation bar on all screens: the app title on the left, and exactly three items on the right: Home, Recommendations, Add recommendation. No other items or duplicate links in the bar.\n\nHome screen, from top to bottom:\n\nA banner with the title \"Recommendations Tracker\", the subtitle \"All your recommendations, organised by type\", the total number of recommendations, and one \"Add recommendation\" button with clear spacing from the text.\nA \"Browse by category\" section with seven cards (Book, Film, Place, Article, Recipe, Restaurant, Other). Each card shows an icon, the category name, the number of recommendations, and how many are To try and Done. Clicking a card opens the Recommendations screen showing only that category.\nA \"Recently added\" section with the last 5 recommendations (title, category, date), and a friendly message when there are none yet. This section appears once.\nA vertical bar chart titled \"Distribution by category\", with one bar per category (all seven always shown, including those with 0), a different colour per bar, and the count written above each bar. The Y axis must show whole numbers only (0, 1, 2, 3...), never decimals such as 0.5 or 0.25, even when there are only one or two recommendations. Set the axis to integer ticks with a minimum of 0 and a step of 1.\nRecommendations screen: a page title and short subtitle, filters for category and status, one \"Add recommendation\" button, and a table bound to Recommendation showing all five attributes, with Edit and Delete, sorting and pagination.\n\nAdd recommendation screen: a form bound to Recommendation with dropdowns for category and status and a date input for added_on, and a Save button.\n\nDesign: modern, clean and appealing. Use a soft indigo-to-sky-blue gradient on the banner, a light neutral page background, white rounded cards with a subtle shadow and a gentle hover lift, and generous, even spacing between sections. Use a harmonious palette for the categories and chart bars: indigo, sky blue, teal, amber, coral, violet, slate. Use one consistent font, and highlight the current page in the navigation bar. No authentication and no agents.\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nTHE CODE\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nthe new categories are not included in the app!!",
+  "instructions": "## Assistant's notes (may be inaccurate)\n\nUse these only for choices the user confirmed in the conversation that are missing from their request below. Never add a feature, database, framework, tool or deployment step that is not in the user's request; where these notes disagree with it, the user's request wins.\n\nAdd all categories defined in the RecommendationCategory enumeration to the existing app.\n\n## The user's original request, verbatim\n\nThis is the authority. Where the summary above is shorter or differs, this text wins.\n\nCreate a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Article, Recipe, Restaurant, Other (required)\nstatus: enumeration RecommendationStatus with values ToTry, Done, Dropped (required)\nnote: str (optional)\nadded_on: date (required)\nGUI diagram: three screens, Home (main page), Recommendations and Add recommendation.\n\nNavigation bar on all screens: the app title on the left, and exactly three items on the right: Home, Recommendations, Add recommendation. No other items or duplicate links in the bar.\n\nHome screen, from top to bottom:\n\nA banner with the title \"Recommendations Tracker\", the subtitle \"All your recommendations, organised by type\", the total number of recommendations, and one \"Add recommendation\" button with clear spacing from the text.\nA \"Browse by category\" section with seven cards (Book, Film, Place, Article, Recipe, Restaurant, Other). Each card shows an icon, the category name, the number of recommendations, and how many are To try and Done. Clicking a card opens the Recommendations screen showing only that category.\nA \"Recently added\" section with the last 5 recommendations (title, category, date), and a friendly message when there are none yet. This section appears once.\nA vertical bar chart titled \"Distribution by category\", with one bar per category (all seven always shown, including those with 0), a different colour per bar, and the count written above each bar. The Y axis must show whole numbers only (0, 1, 2, 3...), never decimals such as 0.5 or 0.25, even when there are only one or two recommendations. Set the axis to integer ticks with a minimum of 0 and a step of 1.\nRecommendations screen: a page title and short subtitle, filters for category and status, one \"Add recommendation\" button, and a table bound to Recommendation showing all five attributes, with Edit and Delete, sorting and pagination.\n\nAdd recommendation screen: a form bound to Recommendation with dropdowns for category and status and a date input for added_on, and a Save button.\n\nDesign: modern, clean and appealing. Use a soft indigo-to-sky-blue gradient on the banner, a light neutral page background, white rounded cards with a subtle shadow and a gentle hover lift, and generous, even spacing between sections. Use a harmonious palette for the categories and chart bars: indigo, sky blue, teal, amber, coral, violet, slate. Use one consistent font, and highlight the current page in the navigation bar. No authentication and no agents.\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nTHE CODE\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nthe new categories are not included in the app!!\n\n## Subsequent user request, verbatim\n\nThis later request takes precedence where it changes earlier requirements.\n\nUpdate the app to include all the categories present in enumeration RecommendationCategory!",
   "history": [
     {
       "instructions": "Create a web app called \"Recommendations Tracker\" to keep all the recommendations in one place, organised by type.\n\nClass diagram: one class named Recommendation, no other classes or associations:\n\ntitle: str (required)\ncategory: enumeration RecommendationCategory with values Book, Film, Place, Arti",
@@ -39,6 +39,17 @@
       "mode": "modify",
       "files_touched": [],
       "run_id": "e97b5030ea1145be88d82b2164e01d5d"
+    },
+    {
+      "instructions": "Update the app to include all the categories present in enumeration RecommendationCategory!",
+      "saved_at": "2026-11-20T13:43:45+00:00",
+      "mode": "modify",
+      "files_touched": [
+        "web_app/backend/pydantic_classes.py",
+        "web_app/backend/sql_alchemy.py",
+        "web_app/frontend/src/pages/Recommendation.tsx"
+      ],
+      "run_id": "7a0194c5e8504d2ea61adf99af732e91"
     }
   ],
   "model": {
@@ -124,10 +135,10 @@
     "description": "Recommendations Tracker web app",
     "has_user_interface": true
   },
-  "turns": 8,
-  "tool_calls_count": 25,
+  "turns": 10,
+  "tool_calls_count": 27,
   "compactions": 0,
-  "elapsed_seconds": 57.3,
+  "elapsed_seconds": 60.6,
   "max_cost_usd": 5.0,
   "max_runtime_seconds": 2400,
   "adaptive_budget_applied": true,
@@ -135,7 +146,23 @@
   "tasks": [
     {
       "id": 1,
-      "text": "Replace RecommendationCategory literals in web_app/backend/sql_alchemy.py and web_app/backend/pydantic_classes.py with exactly Book, Film, Place, Article, Recipe, Restaurant, and Other, removing Podcast, Product, and App.",
+      "text": "Update the RecommendationCategory option source and every category selector, category card, and chart data mapping in `web_app/frontend/src/pages/Recommendation.tsx` to include all ten `RecommendationCategory` literals: Book, Film, Place, Article, Restaurant, Podcast, Product, Recipe, App, and Other.",
+      "done": true,
+      "attempts": 0,
+      "blocked": false,
+      "verification": "unverified",
+      "implementation_evidence": [
+        {
+          "path": "web_app/frontend/src/pages/Recommendation.tsx",
+          "quote": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Restaurant\", \"Podcast\", \"Product\", \"Recipe\", \"App\", \"Other\"];",
+          "sha256": "779499c7688636aab8b2329d3e9e338e7d4a953b0c60691e87adc30500b489e0",
+          "origin": "written"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Ensure backend category validation and serialization in `web_app/backend/pydantic_classes.py` and `web_app/backend/sql_alchemy.py` accept and persist all ten `RecommendationCategory` literals: Book, Film, Place, Article, Restaurant, Podcast, Product, Recipe, App, and Other.",
       "done": true,
       "attempts": 0,
       "blocked": false,
@@ -143,43 +170,9 @@
       "implementation_evidence": [
         {
           "path": "web_app/backend/sql_alchemy.py",
-          "quote": "class RecommendationCategory(enum.Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\"",
-          "sha256": "d5fc7a972ae2905c1213119d80f75d2a0849571d10540f0a99fb6062c7098f3f",
-          "origin": "existing"
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "quote": "class RecommendationCategory(Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\"",
-          "sha256": "d09e56fd958197e85cbe8e8b68e7b838ce279dde02435d17669155028ffd0196",
-          "origin": "existing"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "text": "Update the Recommendation category dropdown, category cards, and category chart in web_app/frontend/src/pages/Recommendation.tsx to include all seven requested categories: Book, Film, Place, Article, Recipe, Restaurant, and Other.",
-      "done": true,
-      "attempts": 0,
-      "blocked": false,
-      "verification": "unverified",
-      "implementation_evidence": [
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];\nconst statuses: Status[] = [\"ToTry\", \"Done\", \"Dropped\"];",
-          "sha256": "3ef37380a21fa9a542f1645c78aa38c83d193ce5d36f471e39a4a0a4fe183a45",
-          "origin": "existing"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "{categories.map(name => { const matching = rows.filter(row => row.category === name); return (",
-          "sha256": "3ef37380a21fa9a542f1645c78aa38c83d193ce5d36f471e39a4a0a4fe183a45",
-          "origin": "existing"
-        },
-        {
-          "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);",
-          "sha256": "3ef37380a21fa9a542f1645c78aa38c83d193ce5d36f471e39a4a0a4fe183a45",
-          "origin": "existing"
+          "quote": "    Podcast = \"Podcast\"\n    Product = \"Product\"\n    Recipe = \"Recipe\"\n    App = \"App\"\n    Other = \"Other\"",
+          "sha256": "84f325141780035e7f59a96d99dcb0b9a2df2581b5f0dbdd19cb298562d762b0",
+          "origin": "written"
         }
       ]
     }
@@ -187,76 +180,36 @@
   "requirements": [
     {
       "id": 1,
-      "text": "The app has a category enumeration with the values Book, Film, Place, Article, Recipe, Restaurant, and Other.",
-      "kind": "validation",
-      "status": "implemented",
-      "evidence": [
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Book = \"Book\""
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Film = \"Film\""
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Place = \"Place\""
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Article = \"Article\""
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Recipe = \"Recipe\""
-        },
-        {
-          "path": "web_app/backend/pydantic_classes.py",
-          "line": "Restaurant = \"Restaurant\""
-        }
-      ],
-      "note": "The category enumeration includes the requested values; Other is also present in the enum.",
-      "inspection_paths": [],
-      "verification": "unverified",
-      "verification_note": "Found in the source; API: a workflow passed but called no cited route"
-    },
-    {
-      "id": 2,
-      "text": "Each category is included in the app.",
+      "text": "Include every category present in the RecommendationCategory enumeration in the app.",
       "kind": "rule",
       "status": "implemented",
       "evidence": [
         {
+          "path": "web_app/backend/pydantic_classes.py",
+          "line": "class RecommendationCategory(Enum):"
+        },
+        {
           "path": "web_app/frontend/src/pages/Recommendation.tsx",
-          "line": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];"
+          "line": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Restaurant\", \"Podcast\", \"Product\", \"Recipe\", \"App\", \"Other\"];"
         }
       ],
-      "note": "All seven categories are included in the app's category list used across the UI, including category cards, filters, and selection options.",
+      "note": "All ten values in RecommendationCategory are represented in the frontend category list, which populates the home category cards, category filter, recommendation form dropdown, and table category options.",
       "inspection_paths": [],
       "verification": "unverified",
-      "verification_note": "Found in the source; screens: not run (the frontend builds)"
+      "verification_note": "Found in the source; API: a workflow passed but called no cited route; screens: not run (the frontend builds)"
     }
   ],
   "business_rules_stated": true,
   "api_scenarios": [
     {
-      "scenario_id": "seven-categories-create-edit-delete",
+      "scenario_id": "all-ten-recommendation-categories",
       "scenario": {
         "requests": [
-          {
-            "method": "GET",
-            "path": "/health",
-            "expected_status": 200,
-            "expected_fields": {
-              "status": "healthy"
-            }
-          },
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Book pick",
+              "title": "Book example",
               "category": "Book",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -270,9 +223,9 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Film pick",
+              "title": "Film example",
               "category": "Film",
-              "status": "Done",
+              "status": "ToTry",
               "added_on": "2026-11-20"
             },
             "expected_status": 200,
@@ -284,7 +237,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Place pick",
+              "title": "Place example",
               "category": "Place",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -298,7 +251,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Article pick",
+              "title": "Article example",
               "category": "Article",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -312,21 +265,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Recipe pick",
-              "category": "Recipe",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 200,
-            "expected_fields": {
-              "category": "Recipe"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Restaurant pick",
+              "title": "Restaurant example",
               "category": "Restaurant",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -340,9 +279,65 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Other pick",
+              "title": "Podcast example",
+              "category": "Podcast",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Podcast"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Product example",
+              "category": "Product",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Product"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Recipe example",
+              "category": "Recipe",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Recipe"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "App example",
+              "category": "App",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "App"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Other example",
               "category": "Other",
-              "status": "Dropped",
+              "status": "ToTry",
               "added_on": "2026-11-20"
             },
             "expected_status": 200,
@@ -352,25 +347,24 @@
           },
           {
             "method": "GET",
-            "path": "/recommendation/{{5.id}}/",
+            "path": "/recommendation/{{8.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "category": "Recipe"
+              "category": "App"
             }
           },
           {
             "method": "PUT",
             "path": "/recommendation/{{5.id}}/",
             "json": {
-              "title": "Restaurant pick updated",
-              "category": "Restaurant",
+              "title": "Updated podcast",
+              "category": "Product",
               "status": "Done",
-              "added_on": "2026-11-20",
-              "note": "Good"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
+              "category": "Product",
               "status": "Done"
             }
           },
@@ -379,48 +373,16 @@
             "path": "/recommendation/{{5.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
-              "title": "Restaurant pick updated"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
-            "method": "DELETE",
-            "path": "/recommendation/{{5.id}}/",
-            "expected_status": 200
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/{{5.id}}/",
-            "expected_status": 404
-          },
-          {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Rejected old category",
-              "category": "Podcast",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Rejected old category",
-              "category": "Product",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Rejected old category",
-              "category": "App",
+              "title": "Invalid category",
+              "category": "NotACategory",
               "status": "ToTry",
               "added_on": "2026-11-20"
             },
@@ -436,17 +398,19 @@
         "responses": [
           {
             "index": 0,
-            "method": "GET",
-            "path": "/health",
+            "method": "POST",
+            "path": "/recommendation/",
             "failures": [],
             "status": 200,
             "json": {
-              "status": "healthy",
-              "timestamp": "2026-11-20T13:34:02.200184",
-              "database": "connected"
+              "category": "Book",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "Book example",
+              "note": null,
+              "id": 1
             },
             "truncated": false,
-            "reads_back": [],
             "failure_count": 0
           },
           {
@@ -456,12 +420,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Book pick",
-              "note": null,
-              "id": 1,
+              "category": "Film",
               "status": "ToTry",
-              "category": "Book",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Film example",
+              "note": null,
+              "id": 2
             },
             "truncated": false,
             "failure_count": 0
@@ -473,12 +437,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Film pick",
+              "category": "Place",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "Place example",
               "note": null,
-              "id": 2,
-              "status": "Done",
-              "category": "Film",
-              "added_on": "2026-11-20"
+              "id": 3
             },
             "truncated": false,
             "failure_count": 0
@@ -490,12 +454,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Place pick",
-              "note": null,
-              "id": 3,
+              "category": "Article",
               "status": "ToTry",
-              "category": "Place",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Article example",
+              "note": null,
+              "id": 4
             },
             "truncated": false,
             "failure_count": 0
@@ -507,12 +471,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Article pick",
-              "note": null,
-              "id": 4,
+              "category": "Restaurant",
               "status": "ToTry",
-              "category": "Article",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Restaurant example",
+              "note": null,
+              "id": 5
             },
             "truncated": false,
             "failure_count": 0
@@ -524,12 +488,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Recipe pick",
+              "category": "Podcast",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "Podcast example",
               "note": null,
-              "id": 5,
-              "status": "Done",
-              "category": "Recipe",
-              "added_on": "2026-11-20"
+              "id": 6
             },
             "truncated": false,
             "failure_count": 0
@@ -541,12 +505,12 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Restaurant pick",
-              "note": null,
-              "id": 6,
+              "category": "Product",
               "status": "ToTry",
-              "category": "Restaurant",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Product example",
+              "note": null,
+              "id": 7
             },
             "truncated": false,
             "failure_count": 0
@@ -558,49 +522,46 @@
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Other pick",
+              "category": "Recipe",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "Recipe example",
               "note": null,
-              "id": 7,
-              "status": "Dropped",
-              "category": "Other",
-              "added_on": "2026-11-20"
+              "id": 8
             },
             "truncated": false,
             "failure_count": 0
           },
           {
             "index": 8,
-            "method": "GET",
-            "path": "/recommendation/5/",
+            "method": "POST",
+            "path": "/recommendation/",
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Recipe pick",
+              "category": "App",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "App example",
               "note": null,
-              "id": 5,
-              "status": "Done",
-              "category": "Recipe",
-              "added_on": "2026-11-20"
+              "id": 9
             },
             "truncated": false,
-            "reads_back": [
-              5
-            ],
             "failure_count": 0
           },
           {
             "index": 9,
-            "method": "PUT",
-            "path": "/recommendation/5/",
+            "method": "POST",
+            "path": "/recommendation/",
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Restaurant pick updated",
-              "note": "Good",
-              "id": 5,
-              "status": "Done",
-              "category": "Restaurant",
-              "added_on": "2026-11-20"
+              "category": "Other",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "Other example",
+              "note": null,
+              "id": 10
             },
             "truncated": false,
             "failure_count": 0
@@ -608,36 +569,36 @@
           {
             "index": 10,
             "method": "GET",
-            "path": "/recommendation/5/",
+            "path": "/recommendation/9/",
             "failures": [],
             "status": 200,
             "json": {
-              "title": "Restaurant pick updated",
-              "note": "Good",
-              "id": 5,
-              "status": "Done",
-              "category": "Restaurant",
-              "added_on": "2026-11-20"
+              "category": "App",
+              "status": "ToTry",
+              "added_on": "2026-11-20",
+              "title": "App example",
+              "note": null,
+              "id": 9
             },
             "truncated": false,
             "reads_back": [
-              5
+              8
             ],
             "failure_count": 0
           },
           {
             "index": 11,
-            "method": "DELETE",
-            "path": "/recommendation/5/",
+            "method": "PUT",
+            "path": "/recommendation/6/",
             "failures": [],
             "status": 200,
             "json": {
-              "id": 5,
-              "title": "Restaurant pick updated",
-              "category": "Restaurant",
+              "category": "Product",
               "status": "Done",
-              "note": "Good",
-              "added_on": "2026-11-20"
+              "added_on": "2026-11-20",
+              "title": "Updated podcast",
+              "note": null,
+              "id": 6
             },
             "truncated": false,
             "failure_count": 0
@@ -645,16 +606,21 @@
           {
             "index": 12,
             "method": "GET",
-            "path": "/recommendation/5/",
+            "path": "/recommendation/6/",
             "failures": [],
-            "status": 404,
+            "status": 200,
             "json": {
-              "error": "Recommendation not found",
-              "message": "Recommendation not found",
-              "detail": "Recommendation not found"
+              "category": "Product",
+              "status": "Done",
+              "added_on": "2026-11-20",
+              "title": "Updated podcast",
+              "note": null,
+              "id": 6
             },
             "truncated": false,
-            "reads_back": [],
+            "reads_back": [
+              5
+            ],
             "failure_count": 0
           },
           {
@@ -671,60 +637,10 @@
                     "body",
                     "category"
                   ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "Podcast",
+                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Restaurant', 'Podcast', 'Product', 'Recipe', 'App' or 'Other'",
+                  "input": "NotACategory",
                   "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 14,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "enum",
-                  "loc": [
-                    "body",
-                    "category"
-                  ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "Product",
-                  "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
-                  }
-                }
-              ]
-            },
-            "truncated": false,
-            "failure_count": 0
-          },
-          {
-            "index": 15,
-            "method": "POST",
-            "path": "/recommendation/",
-            "failures": [],
-            "status": 422,
-            "json": {
-              "detail": [
-                {
-                  "type": "enum",
-                  "loc": [
-                    "body",
-                    "category"
-                  ],
-                  "msg": "Input should be 'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'",
-                  "input": "App",
-                  "ctx": {
-                    "expected": "'Book', 'Film', 'Place', 'Article', 'Recipe', 'Restaurant' or 'Other'"
+                    "expected": "'Book', 'Film', 'Place', 'Article', 'Restaurant', 'Podcast', 'Product', 'Recipe', 'App' or 'Other'"
                   }
                 }
               ]
@@ -736,7 +652,7 @@
         "assertion_failures": [],
         "scope": "Only the submitted scenario was checked; this is not complete specification verification.",
         "backend": "web_app/backend",
-        "scenario_id": "seven-categories-create-edit-delete"
+        "scenario_id": "all-ten-recommendation-categories"
       }
     }
   ],
@@ -744,13 +660,13 @@
   "model_conversion_issues": [],
   "model_assembly_issues": [],
   "usage": {
-    "api_calls": 13,
-    "input_tokens": 87512,
-    "output_tokens": 2367,
+    "api_calls": 15,
+    "input_tokens": 86874,
+    "output_tokens": 2795,
     "cache_creation_tokens": 0,
-    "cache_read_tokens": 181224,
-    "total_tokens": 271103,
-    "estimated_cost_usd": 0.1276,
+    "cache_read_tokens": 228063,
+    "total_tokens": 317732,
+    "estimated_cost_usd": 0.1408,
     "billed_to_user": true,
     "model": "openai/gpt-6-sol"
   },
@@ -776,6 +692,11 @@
     },
     {
       "path": ".agent-trace/c53887fe1ccf454bbab5397a66e971d5.json",
+      "size": 53846,
+      "source": "llm"
+    },
+    {
+      "path": ".agent-trace/e97b5030ea1145be88d82b2164e01d5d.json",
       "size": 53846,
       "source": "llm"
     },
@@ -822,7 +743,7 @@
     },
     {
       "path": "web_app/backend/pydantic_classes.py",
-      "size": 1102,
+      "size": 1166,
       "source": "generator",
       "llm_modified": true
     },
@@ -844,7 +765,7 @@
     },
     {
       "path": "web_app/backend/sql_alchemy.py",
-      "size": 4143,
+      "size": 4207,
       "source": "generator",
       "llm_modified": true
     },
@@ -1043,7 +964,7 @@
     },
     {
       "path": "web_app/frontend/src/pages/Recommendation.tsx",
-      "size": 11329,
+      "size": 11533,
       "source": "generator",
       "llm_modified": true
     },
@@ -1064,22 +985,13 @@
     }
   ],
   "output_summary": {
-    "total_files": 56,
+    "total_files": 57,
     "from_generator": 48,
-    "from_llm": 8,
+    "from_llm": 9,
     "generator_files_edited_by_llm": 13,
-    "total_bytes": 498473
+    "total_bytes": 552651
   },
   "tool_calls": [
-    {
-      "turn": 1,
-      "tool": "read_file",
-      "input": {
-        "path": "web_app/backend/pydantic_classes.py"
-      },
-      "success": true,
-      "status": "ok"
-    },
     {
       "turn": 1,
       "tool": "read_file",
@@ -1093,7 +1005,7 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/pages/Recommendation.tsx"
+        "path": "web_app/frontend/src/App.tsx"
       },
       "success": true,
       "status": "ok"
@@ -1102,7 +1014,7 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/App.tsx"
+        "path": "web_app/backend/pydantic_classes.py"
       },
       "success": true,
       "status": "ok"
@@ -1120,7 +1032,7 @@
       "turn": 1,
       "tool": "read_file",
       "input": {
-        "path": "web_app/backend/routers/recommendation.py"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx"
       },
       "success": true,
       "status": "ok"
@@ -1136,73 +1048,64 @@
     },
     {
       "turn": 1,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py up"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 2,
       "tool": "read_file",
       "input": {
-        "path": "web_app/frontend/src/components/runtime/FormBlock.tsx"
+        "path": "web_app/backend/routers/recommendation.py"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 2,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/src/components/runtime/TableBlock.tsx"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "type Category = \"Book\" | \"Film\" | \"Place\" | \"Article\" | \"Recipe\" | \"Restaurant\" | \"Other\";\n",
+        "new_text": "type Category = \"Book\" | \"Film\" | \"Place\" | \"Article\" | \"Restaurant\" | \"Podcast\" | \"Product\" | \"Recipe\" | \"App\" | \"Other\";\n"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 2,
-      "tool": "read_file",
+      "tool": "modify_file",
       "input": {
-        "path": "web_app/frontend/package.json"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];\n",
+        "new_text": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Restaurant\", \"Podcast\", \"Product\", \"Recipe\", \"App\", \"Other\"];\n"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 2,
-      "tool": "search_in_files",
+      "tool": "modify_file",
       "input": {
-        "pattern": "Podcast|Product|\\bApp\\b|Recipe|Restaurant",
-        "file_glob": "*.tsx"
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "old_text": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Recipe: \"\ud83c\udf72\", Restaurant: \"\ud83c\udf7d\ufe0f\", Other: \"\u2728\" };\nconst categoryColors: Record<Category, string> = { Book: \"var(--tracker-indigo)\", Film: \"var(--tracker-sky)\", Place: \"var(--tracker-teal)\", Article: \"var(--tracker-amber)\", Recipe: \"var(--tracker-coral)\", Restaurant: \"var(--tracker-violet)\", Other: \"var(--tracker-slate)\" };\n",
+        "new_text": "const categoryIcons: Record<Category, string> = { Book: \"\ud83d\udcda\", Film: \"\ud83c\udfac\", Place: \"\ud83d\udccd\", Article: \"\ud83d\udcf0\", Restaurant: \"\ud83c\udf7d\ufe0f\", Podcast: \"\ud83c\udf99\ufe0f\", Product: \"\ud83c\udf81\", Recipe: \"\ud83c\udf72\", App: \"\ud83d\udcf1\", Other: \"\u2728\" };\nconst categoryColors: Record<Category, string> = { Book: \"var(--tracker-indigo)\", Film: \"var(--tracker-sky)\", Place: \"var(--tracker-teal)\", Article: \"var(--tracker-amber)\", Restaurant: \"var(--tracker-violet)\", Podcast: \"var(--tracker-coral)\", Product: \"var(--tracker-slate)\", Recipe: \"var(--tracker-coral)\", App: \"var(\n<<truncated 50 of 550 chars, sha256 dc5656a9634f>>"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 2,
-      "tool": "run_command",
+      "tool": "modify_file",
       "input": {
-        "command": "python .besser_probe.py routes"
+        "path": "web_app/backend/sql_alchemy.py",
+        "old_text": "    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\"\n",
+        "new_text": "    Article = \"Article\"\n    Restaurant = \"Restaurant\"\n    Podcast = \"Podcast\"\n    Product = \"Product\"\n    Recipe = \"Recipe\"\n    App = \"App\"\n    Other = \"Other\"\n"
       },
       "success": true,
       "status": "ok"
     },
     {
       "turn": 2,
-      "tool": "run_command",
+      "tool": "modify_file",
       "input": {
-        "command": "python .besser_probe.py req GET /health"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 3,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py req POST /recommendation/ '{\"title\":\"New category check\",\"category\":\"Recipe\",\"status\":\"ToTry\",\"added_on\":\"2026-11-20\"}'"
+        "path": "web_app/backend/pydantic_classes.py",
+        "old_text": "    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\"\n",
+        "new_text": "    Article = \"Article\"\n    Restaurant = \"Restaurant\"\n    Podcast = \"Podcast\"\n    Product = \"Product\"\n    Recipe = \"Recipe\"\n    App = \"App\"\n    Other = \"Other\"\n"
       },
       "success": true,
       "status": "ok"
@@ -1220,10 +1123,18 @@
     },
     {
       "turn": 3,
-      "tool": "task_list",
+      "tool": "run_command",
       "input": {
-        "action": "list"
+        "command": "python .besser_probe.py up",
+        "working_dir": "."
       },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 3,
+      "tool": "validate_app",
+      "input": {},
       "success": true,
       "status": "ok"
     },
@@ -1231,16 +1142,8 @@
       "turn": 4,
       "tool": "run_command",
       "input": {
-        "command": "python .besser_probe.py req GET /recommendation/1/"
-      },
-      "success": true,
-      "status": "ok"
-    },
-    {
-      "turn": 4,
-      "tool": "run_command",
-      "input": {
-        "command": "python .besser_probe.py req GET /recommendation/"
+        "command": "python .besser_probe.py routes",
+        "working_dir": "."
       },
       "success": true,
       "status": "ok"
@@ -1255,9 +1158,12 @@
       "status": "ok"
     },
     {
-      "turn": 4,
-      "tool": "validate_app",
-      "input": {},
+      "turn": 5,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py req GET /health",
+        "working_dir": "."
+      },
       "success": true,
       "status": "ok"
     },
@@ -1265,7 +1171,7 @@
       "turn": 5,
       "tool": "run_command",
       "input": {
-        "command": "npm run build && npx tsc --noEmit",
+        "command": "npm run build",
         "working_dir": "web_app/frontend",
         "timeout": 120
       },
@@ -1276,21 +1182,13 @@
       "turn": 5,
       "tool": "test_api",
       "input": {
-        "scenario_id": "seven-categories-create-edit-delete",
+        "scenario_id": "all-ten-recommendation-categories",
         "requests": [
-          {
-            "method": "GET",
-            "path": "/health",
-            "expected_status": 200,
-            "expected_fields": {
-              "status": "healthy"
-            }
-          },
           {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Book pick",
+              "title": "Book example",
               "category": "Book",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -1304,9 +1202,9 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Film pick",
+              "title": "Film example",
               "category": "Film",
-              "status": "Done",
+              "status": "ToTry",
               "added_on": "2026-11-20"
             },
             "expected_status": 200,
@@ -1318,7 +1216,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Place pick",
+              "title": "Place example",
               "category": "Place",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -1332,7 +1230,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Article pick",
+              "title": "Article example",
               "category": "Article",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -1346,21 +1244,7 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Recipe pick",
-              "category": "Recipe",
-              "status": "Done",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 200,
-            "expected_fields": {
-              "category": "Recipe"
-            }
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Restaurant pick",
+              "title": "Restaurant example",
               "category": "Restaurant",
               "status": "ToTry",
               "added_on": "2026-11-20"
@@ -1374,9 +1258,65 @@
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Other pick",
+              "title": "Podcast example",
+              "category": "Podcast",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Podcast"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Product example",
+              "category": "Product",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Product"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Recipe example",
+              "category": "Recipe",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "Recipe"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "App example",
+              "category": "App",
+              "status": "ToTry",
+              "added_on": "2026-11-20"
+            },
+            "expected_status": 200,
+            "expected_fields": {
+              "category": "App"
+            }
+          },
+          {
+            "method": "POST",
+            "path": "/recommendation/",
+            "json": {
+              "title": "Other example",
               "category": "Other",
-              "status": "Dropped",
+              "status": "ToTry",
               "added_on": "2026-11-20"
             },
             "expected_status": 200,
@@ -1386,25 +1326,24 @@
           },
           {
             "method": "GET",
-            "path": "/recommendation/{{5.id}}/",
+            "path": "/recommendation/{{8.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "category": "Recipe"
+              "category": "App"
             }
           },
           {
             "method": "PUT",
             "path": "/recommendation/{{5.id}}/",
             "json": {
-              "title": "Restaurant pick updated",
-              "category": "Restaurant",
+              "title": "Updated podcast",
+              "category": "Product",
               "status": "Done",
-              "added_on": "2026-11-20",
-              "note": "Good"
+              "added_on": "2026-11-20"
             },
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
+              "category": "Product",
               "status": "Done"
             }
           },
@@ -1413,48 +1352,16 @@
             "path": "/recommendation/{{5.id}}/",
             "expected_status": 200,
             "expected_fields": {
-              "category": "Restaurant",
-              "title": "Restaurant pick updated"
+              "category": "Product",
+              "status": "Done"
             }
           },
           {
-            "method": "DELETE",
-            "path": "/recommendation/{{5.id}}/",
-            "expected_status": 200
-          },
-          {
-            "method": "GET",
-            "path": "/recommendation/{{5.id}}/",
-            "expected_status": 404
-          },
-          {
             "method": "POST",
             "path": "/recommendation/",
             "json": {
-              "title": "Rejected old category",
-              "category": "Podcast",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Rejected old category",
-              "category": "Product",
-              "status": "ToTry",
-              "added_on": "2026-11-20"
-            },
-            "expected_status": 422
-          },
-          {
-            "method": "POST",
-            "path": "/recommendation/",
-            "json": {
-              "title": "Rejected old category",
-              "category": "App",
+              "title": "Invalid category",
+              "category": "NotACategory",
               "status": "ToTry",
               "added_on": "2026-11-20"
             },
@@ -1467,41 +1374,40 @@
     },
     {
       "turn": 6,
-      "tool": "task_list",
+      "tool": "run_command",
       "input": {
-        "action": "mixed",
-        "done_ids": [
-          1,
-          2
-        ],
-        "existing": true,
-        "evidence": [
-          {
-            "id": 1,
-            "path": "web_app/backend/sql_alchemy.py",
-            "quote": "class RecommendationCategory(enum.Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\""
-          },
-          {
-            "id": 1,
-            "path": "web_app/backend/pydantic_classes.py",
-            "quote": "class RecommendationCategory(Enum):\n    Book = \"Book\"\n    Film = \"Film\"\n    Place = \"Place\"\n    Article = \"Article\"\n    Recipe = \"Recipe\"\n    Restaurant = \"Restaurant\"\n    Other = \"Other\""
-          },
-          {
-            "id": 2,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];\nconst statuses: Status[] = [\"ToTry\", \"Done\", \"Dropped\"];"
-          },
-          {
-            "id": 2,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "{categories.map(name => { const matching = rows.filter(row => row.category === name); return ("
-          },
-          {
-            "id": 2,
-            "path": "web_app/frontend/src/pages/Recommendation.tsx",
-            "quote": "const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);"
-          }
-        ]
+        "command": "python .besser_probe.py req POST /recommendation/ '{\"title\":\"Podcast live probe\",\"category\":\"Podcast\",\"status\":\"ToTry\",\"added_on\":\"2026-11-20\"}'",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 7,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/backend/sql_alchemy.py",
+        "offset": 58,
+        "limit": 38
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 7,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/frontend/src/pages/Recommendation.tsx",
+        "limit": 34
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 7,
+      "tool": "read_file",
+      "input": {
+        "path": "web_app/backend/pydantic_classes.py"
       },
       "success": true,
       "status": "ok"
@@ -1510,7 +1416,43 @@
       "turn": 7,
       "tool": "run_command",
       "input": {
-        "command": "python .besser_probe.py down"
+        "command": "python .besser_probe.py req GET /recommendation/1/",
+        "working_dir": "."
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 8,
+      "tool": "task_list",
+      "input": {
+        "action": "done",
+        "ids": [
+          1,
+          2
+        ],
+        "evidence": [
+          {
+            "id": 1,
+            "path": "web_app/frontend/src/pages/Recommendation.tsx",
+            "quote": "const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Restaurant\", \"Podcast\", \"Product\", \"Recipe\", \"App\", \"Other\"];"
+          },
+          {
+            "id": 2,
+            "path": "web_app/backend/sql_alchemy.py",
+            "quote": "    Podcast = \"Podcast\"\n    Product = \"Product\"\n    Recipe = \"Recipe\"\n    App = \"App\"\n    Other = \"Other\""
+          }
+        ]
+      },
+      "success": true,
+      "status": "ok"
+    },
+    {
+      "turn": 9,
+      "tool": "run_command",
+      "input": {
+        "command": "python .besser_probe.py down",
+        "working_dir": "."
       },
       "success": true,
       "status": "ok"
@@ -1526,21 +1468,11 @@
     "renamed": [],
     "changes": []
   },
-  "fix_run": {
-    "detected": true,
-    "target": "the Recommendation feature",
-    "kind": "entity",
-    "entities": [
-      "Recommendation"
-    ],
-    "target_resolved": true,
-    "target_message": null
-  },
   "secret_findings": 0,
   "run": {
     "mode": "modify",
     "mode_reason": "edit of a previous result",
-    "base_run_id": "c53887fe1ccf454bbab5397a66e971d5",
+    "base_run_id": "e97b5030ea1145be88d82b2164e01d5d",
     "target": "web_app",
     "target_decided_by": "not decided",
     "frontend_requested": true,
@@ -1558,53 +1490,46 @@
     "stop_message": null,
     "outcome": "completed",
     "warnings": [],
-    "duration_seconds": 57.7,
+    "duration_seconds": 61.1,
     "phase_seconds": {
-      "select": 7.0,
-      "plan": 4.6,
-      "customise": 34.3,
-      "validate": 11.7
+      "select": 8.3,
+      "plan": 4.4,
+      "customise": 37.0,
+      "validate": 11.4
     },
-    "estimated_cost_usd": 0.1276,
+    "estimated_cost_usd": 0.1408,
     "counts": {
-      "turns": 8,
-      "tool_calls": 25,
+      "turns": 10,
+      "tool_calls": 27,
       "files_written": 0,
-      "files_edited": 0,
+      "files_edited": 3,
       "blockers": 0
     },
     "besser_version": "8.10.1",
     "besser_build": "9deaedacf",
-    "request_chars": 3503
+    "request_chars": 3731
   },
   "verification": {
     "verified": [
       {
         "kind": "requirement",
         "id": "R1",
-        "what": "The app has a category enumeration with the values Book, Film, Place, Article, Recipe, Restaurant, and Other.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/backend/pydantic_classes.py: Book = \"Book\" and web_app/backend/pydantic_classes.py: Film = \"Film\" and web_app/backend/pydantic_classes.py: Place = \"Place\" and \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route",
-        "why": null
-      },
-      {
-        "kind": "requirement",
-        "id": "R2",
-        "what": "Each category is included in the app.",
-        "how": "implementation cited and re-checked against the delivered source: web_app/frontend/src/pages/Recommendation.tsx: const categories: Category[] = [\"Book\", \"Film\", \"Place\", \"Article\", \"Recipe\", \"Restaurant\", \"Other\"];; Found in the source; screens: not run (the frontend builds)",
+        "what": "Include every category present in the RecommendationCategory enumeration in the app.",
+        "how": "implementation cited and re-checked against the delivered source: web_app/backend/pydantic_classes.py: class RecommendationCategory(Enum): and web_app/frontend/src/pages/Recommendation.tsx: const \u2026[truncated]; Found in the source; API: a workflow passed but called no cited route; screens: not run (the frontend builds)",
         "why": null
       },
       {
         "kind": "api_workflow",
-        "id": "seven-categories-create-edit-delete",
-        "what": "Test workflow 'seven-categories-create-edit-delete'",
-        "how": "16 request(s) run against the app: GET /health, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, GET /recommendation/{{5.id}}/, PUT /recommendation/{{5.id}}/, GET /recommendation/{{5.id}}/, DELETE \u2026[truncated]",
+        "id": "all-ten-recommendation-categories",
+        "what": "Test workflow 'all-ten-recommendation-categories'",
+        "how": "14 request(s) run against the app: POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, POST /recommendation/, GET /recommendation/{{8.id}}/, PUT \u2026[truncated]",
         "why": null
       }
     ],
     "notVerified": [],
     "shippedUnenforced": [],
     "counts": {
-      "verified": 3,
+      "verified": 2,
       "notVerified": 0,
       "shippedUnenforced": 0
     }
