@@ -36,6 +36,9 @@ const toValue = (type: string | undefined, raw: FormDataEntryValue | null): any 
     case "bool":
     case "boolean":
       return raw !== null && text !== "false";
+    case "enum":
+    case "date":
+      return text;
     default:
       return text;
   }

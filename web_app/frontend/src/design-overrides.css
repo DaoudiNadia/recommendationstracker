@@ -75,8 +75,13 @@ html, body, #root, .app-container, .ds-page { background-color: var(--ds-backgro
 .tracker-recent-list li:last-child { border: 0; }
 .tracker-recent-list li strong { flex: 1; }
 .tracker-recent-list time { color: var(--ds-muted); }
-.tracker-filter-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }
-.tracker-filter-panel .ds-field { margin: 0; }
+.tracker-filter-panel { display: flex; align-items: center; flex-wrap: wrap; gap: var(--ds-space-md); margin: var(--ds-space-lg) 0; }
+.tracker-filter-panel .ds-label { margin: 0; }
+.tracker-category-chips { display: flex; align-items: center; flex-wrap: wrap; gap: calc(var(--ds-space-md) / 2); }
+.tracker-category-chip.ds-btn { border: 1px solid var(--ds-border); border-radius: 999px; background: var(--ds-surface); color: var(--ds-muted); padding: calc(var(--ds-space-md) / 2) var(--ds-space-md); font-weight: 600; cursor: pointer; transition: transform .2s, background-color .2s, box-shadow .2s; }
+.tracker-category-chip.ds-btn:hover { transform: translateY(-2px); box-shadow: var(--ds-shadow); color: var(--ds-primary); }
+.tracker-category-chip.ds-btn.active { background: var(--ds-primary); border-color: var(--ds-primary); color: var(--ds-surface); }
+.tracker-category-chip.ds-btn:focus-visible { outline: 2px solid var(--ds-primary); outline-offset: 2px; }
 .tracker-form-section { max-width: 780px; margin: auto; }
 .tracker-form { margin-top: var(--ds-space-lg); }
 .tracker-form textarea.ds-input { resize: vertical; }

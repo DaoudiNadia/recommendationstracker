@@ -54,8 +54,14 @@ const useRecommendations = () => {
 const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "list" }) => {
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const category = searchParams.get("category") || "";
-  const [status, setStatus] = useState("");
+  const category = categories.find(name => name === searchParams.get("category")) || "";
+  const status = statuses.find(name => name === searchParams.get("status")) || "";
+  const updateFilters = (nextCategory: string, nextStatus: string) => {
+    const params: Record<string, string> = {};
+    if (nextCategory) params.category = nextCategory;
+    if (nextStatus) params.status = nextStatus;
+    setSearchParams(params);
+  };
   const { rows, loading, error } = useRecommendations();
   const chartColors = useMemo(() => {
     if (typeof window === "undefined") return {};
@@ -109,8 +115,17 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
               <div className="ds-field"><label className="ds-label" htmlFor="rec-date">Added on</label><input className="ds-input" id="rec-date" name="added_on" type="date" required /></div>
             </FormBlock>
           </section> : <section className="tracker-section"><div className="tracker-list-heading"><div><h1 id="iwr1h" className="ds-heading">Recommendations</h1><p id="ifus2" className="tracker-muted">Browse, sort and manage everything you’ve saved.</p></div><Link className="ds-btn ds-btn-primary" to="/recommendation/new">Add recommendation</Link></div>
-            <div className="ds-card tracker-filter-panel"><div className="ds-field"><label className="ds-label" htmlFor="filter-category">Category</label><select className="ds-input" id="filter-category" value={category} onChange={event => setSearchParams(event.target.value ? { category: event.target.value } : {})}><option value="">All categories</option>{categories.map(item => <option key={item} value={item}>{item}</option>)}</select></div>
-              <div className="ds-field"><label className="ds-label" htmlFor="filter-status">Status</label><select className="ds-input" id="filter-status" value={status} onChange={event => setStatus(event.target.value)}><option value="">All statuses</option>{statuses.map(item => <option key={item} value={item}>{item === "ToTry" ? "To try" : item}</option>)}</select></div></div>
+            <div className="ds-card tracker-filter-panel" role="group" aria-label="Filter recommendations">
+              <div className="tracker-category-chips" aria-label="Category chips">
+                {["", ...categories].map(name => <button key={name || "all"} type="button" className={`ds-btn tracker-category-chip${category === name ? " active" : ""}`} aria-pressed={category === name} onClick={() => updateFilters(name, status)}>{name || "All"}</button>)}
+              </div>
+              <label className="ds-label tracker-status-filter" htmlFor="recommendation-status-filter">Status
+                <select className="ds-input" id="recommendation-status-filter" value={status} onChange={event => updateFilters(category, event.target.value)}>
+                  <option value="">All statuses</option>
+                  {statuses.map(name => <option key={name} value={name}>{name === "ToTry" ? "To try" : name}</option>)}
+                </select>
+              </label>
+            </div>
             <TableBlock id="table-recommendation-0" className="has-data-binding tracker-table" title="Recommendation list" options={tableOptions} filter={filtered} dataBinding={{ entity: "Recommendation", endpoint: "/recommendation/", row_key_fields: ["id"] }} />
           </section>}
         </main>
