@@ -58,7 +58,7 @@ const Recommendation: React.FC<{ view?: "home" | "list" | "add" }> = ({ view = "
   const [status, setStatus] = useState("");
   const { rows, loading, error } = useRecommendations();
   const chartData = useMemo(() => categories.map(name => ({ name, count: rows.filter(row => row.category === name).length })), [rows]);
-  const recent = useMemo(() => [...rows].sort((a, b) => b.id - a.id).slice(0, 5), [rows]);
+  const recent = useMemo(() => [...rows].sort((a, b) => b.added_on.localeCompare(a.added_on) || b.id - a.id).slice(0, 5), [rows]);
   const filtered = useMemo(() => (row: RecordItem) => (!category || row.category === category) && (!status || row.status === status), [category, status]);
   return (
     <div id="page-recommendation-0" className="ds-page">

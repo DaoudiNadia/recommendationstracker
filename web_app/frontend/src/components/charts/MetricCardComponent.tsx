@@ -77,7 +77,7 @@ export const MetricCardComponent: React.FC<Props> = ({
     padding: "25px",
     borderRadius: "10px",
     boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "inherit",
     minHeight: "140px",
     display: "flex",
     flexDirection: "column",

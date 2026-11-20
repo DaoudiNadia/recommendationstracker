@@ -1,7 +1,7 @@
 from datetime import datetime, date, time
 from typing import Any, List, Optional, Union, Set
 from enum import Enum
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, Field
 
 
 ############################################
@@ -30,6 +30,13 @@ class RecommendationCreate(BaseModel):
     category: RecommendationCategory
     note: Optional[str] = None
     status: RecommendationStatus
-    title: str
+    title: str = Field(min_length=1)
+
+    @field_validator("title")
+    @classmethod
+    def title_must_not_be_blank(cls, value: str) -> str:
+        if not value.strip():
+            raise ValueError("Title is required")
+        return value
 
 

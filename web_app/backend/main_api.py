@@ -15,7 +15,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title='Hotel API',
+    title='Recommendations Tracker API',
     description='Auto-generated REST API with full CRUD operations, relationship management, and advanced features',
     version='1.0.0',
     docs_url="/docs",

@@ -1,4 +1,4 @@
-# Hotel
+# Recommendations Tracker
 
 The services of this app and how they are built are described in
 `web_app/docker-compose.yml`; Docker Compose builds and starts them together.

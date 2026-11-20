@@ -55,15 +55,12 @@ def search_recommendation(
 
 
 @router.get("/recommendation/{recommendation_id}/", response_model=None, tags=["Recommendation"])
+@router.get("/recommendation/{recommendation_id}", response_model=None, tags=["Recommendation"], include_in_schema=False)
 async def get_recommendation(recommendation_id: int, database: Session = Depends(get_db)) -> Recommendation:
     db_recommendation = database.query(Recommendation).filter(Recommendation.id == recommendation_id).first()
     if db_recommendation is None:
         raise HTTPException(status_code=404, detail="Recommendation not found")
-
-    response_data = {
-        "recommendation": db_recommendation,
-}
-    return response_data
+    return db_recommendation
 
 
 

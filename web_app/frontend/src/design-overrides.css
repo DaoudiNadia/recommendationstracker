@@ -21,7 +21,9 @@
   --tracker-violet: #a855f7;
   --tracker-slate: #64748b;
 }
-body, .ds-page { background: var(--ds-background); color: var(--ds-text); font-family: var(--ds-font); }
+/* One application-wide typeface and a light neutral canvas on every screen. */
+html, body, #root, .app-container, .ds-page { background: var(--ds-background); color: var(--ds-text); font-family: var(--ds-font); }
+.app-container :is(button, input, select, textarea, table, a) { font-family: inherit; }
 .ds-nav { position: sticky; top: 0; z-index: 10; background: var(--ds-surface); border-color: var(--ds-border); box-shadow: var(--ds-shadow); }
 .tracker-nav-inner, .tracker-nav-links, .tracker-list-heading, .tracker-hero-content { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-lg); }
 .tracker-brand { font-size: 1.15rem; font-weight: 750; color: var(--ds-primary); white-space: nowrap; }
@@ -43,6 +45,7 @@ body, .ds-page { background: var(--ds-background); color: var(--ds-text); font-f
 .ds-card, .ds-kpi { background: var(--ds-surface); border: 1px solid var(--ds-border); border-radius: var(--ds-radius); box-shadow: var(--ds-shadow); padding: var(--ds-space-lg); transition: transform .2s, box-shadow .2s; }
 .ds-card:hover, .ds-kpi:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(30,41,59,.11); }
 .tracker-category-card { display: block; text-decoration: none; color: var(--ds-text); }
+.tracker-category-card:focus-visible, .tracker-nav-link:focus-visible { outline: 2px solid var(--ds-primary); outline-offset: 3px; }
 .tracker-category-card:nth-child(7n+1) { --category-color: var(--tracker-indigo); }
 .tracker-category-card:nth-child(7n+2) { --category-color: var(--tracker-sky); }
 .tracker-category-card:nth-child(7n+3) { --category-color: var(--tracker-teal); }
@@ -68,4 +71,6 @@ body, .ds-page { background: var(--ds-background); color: var(--ds-text); font-f
 .ds-btn-primary { background: var(--ds-primary); border-color: var(--ds-primary); color: var(--ds-surface); }
 .ds-btn, .ds-input { border-radius: calc(var(--ds-radius) / 2); font-family: var(--ds-font); }
 .tracker-table { font-family: var(--ds-font); }
+/* Runtime widgets and native form controls inherit the same typeface as the page. */
+.ds-page, .ds-page button, .ds-page input, .ds-page select, .ds-page textarea, .ds-page .bsr-runtime { font-family: var(--ds-font); }
 @media (max-width: 700px) { .tracker-nav-inner, .tracker-hero-content, .tracker-list-heading { align-items: flex-start; flex-direction: column; } .tracker-nav-links { gap: 0; } .tracker-nav-link { font-size: .85rem; } .tracker-hero-action { margin-left: 0; } .tracker-filter-panel { grid-template-columns: 1fr; } .tracker-recent-list li { flex-wrap: wrap; } }

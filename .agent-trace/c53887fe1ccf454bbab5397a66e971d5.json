@@ -1,0 +1,1908 @@
+{
+  "version": "0.1",
+  "id": "ac5bf98b-388d-4358-ab22-68918a27d034",
+  "timestamp": "2026-11-20T13:29:22+00:00",
+  "tool": {
+    "name": "BESSER Spec-Driven Agent",
+    "version": "8.10.1"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 20,
+              "content_hash": "sha256:0f28dc29979a49dd45c6946077089c231420c6a521516e4fe6a37b416c4476c1"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "README.md",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 1,
+              "content_hash": "sha256:cb0f332fca279ff0617ed8f027afb4c06a96da6ec75b19a4952157b82dcf4ecb"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 2,
+              "end_line": 27,
+              "content_hash": "sha256:589999c563a0c85ff18cb98f8f9323e8a9b8ad2eb8605bd1bce0ff2cd0180bc1"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/README.md",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 53,
+              "content_hash": "sha256:3e82e9a6dfc4a6297d64345f8921546e8c5ccee7c2354ee96f8b081bb8c3ccc2"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/.dockerignore",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 17,
+              "content_hash": "sha256:97fbf046c24a199815c055fd2ac4426934a407ed9efb3bbabe3d786724468e9d"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/Dockerfile",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 16,
+              "content_hash": "sha256:12384eecf413bbaec3629fd4f4f4e197fc045aa6517020af85954fa84fa84c3f"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/bal_stdlib.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 104,
+              "content_hash": "sha256:ea06a261d389c9c79b44997fdbe6ec1484fa4da3bee99504bdb32ed3430cd715"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/database.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 83,
+              "content_hash": "sha256:ce48e31cf1a02509c29459304433c46af8289c380b19ad172fed810e2ddb23c8"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/main_api.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 17,
+              "content_hash": "sha256:08e692c2f01d44cbfce8b27cd08861a80e13f37b1d08ae276ba0442133d35b62"
+            },
+            {
+              "start_line": 19,
+              "end_line": 193,
+              "content_hash": "sha256:19964a6e617a38a56fea829a37af644e0bdac095183274b1ffaab064c78c4773"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 18,
+              "end_line": 18,
+              "content_hash": "sha256:99f58fc9d6f6e81b82924b8d4dd9809fa95e980052e0ea76b06ad389a4f2dbfc"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/pydantic_classes.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 3,
+              "content_hash": "sha256:94c0ad5a4335cccddde534d9b6d3c4a2f08f040b95fd335e1e44353b4b24d617"
+            },
+            {
+              "start_line": 5,
+              "end_line": 32,
+              "content_hash": "sha256:8bf14fa4724d11b8fb688d84ff2486ef0d849c0018b5b5790fdcf64b786a205a"
+            },
+            {
+              "start_line": 41,
+              "end_line": 42,
+              "content_hash": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 4,
+              "end_line": 4,
+              "content_hash": "sha256:71a41a85fd47532e52fc40eae6c866fb712e9ac889389455912ca384f29ffbc9"
+            },
+            {
+              "start_line": 33,
+              "end_line": 40,
+              "content_hash": "sha256:799025694143868960eb6f1c11e2ec63ec2b7e521a786d56dc4af9c815e096d4"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/requirements.txt",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 6,
+              "content_hash": "sha256:659bd56f8b8150701992e4a514a04ba61d2b591066be3c86b5915beb1f26f28d"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/routers/recommendation.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 57,
+              "content_hash": "sha256:8a24d698fe95c0b4542ac6e1219617a090ee0415e98c7b97d86695673abdc0d6"
+            },
+            {
+              "start_line": 59,
+              "end_line": 62,
+              "content_hash": "sha256:93610f9f0c94f56408f3f4ddb884ccf4e61cb624c61603975b042b379b24a41b"
+            },
+            {
+              "start_line": 64,
+              "end_line": 195,
+              "content_hash": "sha256:95c006b93ccc985af01e921046de1f40c950d1957df4abd4e0d4f7e69c4231fe"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 58,
+              "end_line": 58,
+              "content_hash": "sha256:155034ace94a31d62d2ed6b227bed3dec08ac371ab650cb9ad8c6196ee5ea7e2"
+            },
+            {
+              "start_line": 63,
+              "end_line": 63,
+              "content_hash": "sha256:7428d82360639ebfad4cb7ac485079dc53d4d05cd0c9efdeb4f1e681c5082da8"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/backend/sql_alchemy.py",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 82,
+              "content_hash": "sha256:95d961ccc4e1efa6a53006c93ff3fd83a0a788e65307161aefd58caa8b51866b"
+            },
+            {
+              "start_line": 86,
+              "end_line": 103,
+              "content_hash": "sha256:5ac2e9f7e3d11e340b2390091d5bf6256037658bdc9342f08a77294d4ab154ff"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 83,
+              "end_line": 85,
+              "content_hash": "sha256:ddb9ddd6a3f172517cd3a90f6657175fc2137d1a55bc88659239e1fcc2c1484d"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/docker-compose.yml",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 29,
+              "content_hash": "sha256:7de1752a92072085613810eba3fbb28fac22c1ba2f787fe8fb8dd22c590db43e"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/.dockerignore",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 17,
+              "content_hash": "sha256:df58296ad3e5262c9004d72974e4779709c187c96e5cda4731d3cb4acfa08160"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/.gitignore",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 23,
+              "content_hash": "sha256:e4cbbecb6adb9db745352546bfb9723f1c5c53bb4f7e07be128198540ecbc08e"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/Dockerfile",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 20,
+              "content_hash": "sha256:41076adc5e6b07ee7ae1373ebb14031507568c7b00d23fabfb9013f44234f723"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/README.md",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 28,
+              "content_hash": "sha256:8d0ffe48f9ac553fdbc80394ec476c6d384fba5f6a73c7ebd0d7b6a491944f31"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/index.html",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 16,
+              "content_hash": "sha256:b40d8178e2339bdae2ea127ee39b0d5ef509bbd1d712f961bd2decc9e35f2aa3"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/package-lock.json",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 3168,
+              "content_hash": "sha256:31f9ce68d1c10aaf08f94d0b66fc86b66c7f3eda224e3a4a801a826999492d1a"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/package.json",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 41,
+              "content_hash": "sha256:e34a36d648fa907cb7a3a62a7e61c04bd97265257db61720dfb68325fec108be"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/App.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 1,
+              "content_hash": "sha256:9abf3e6700d98954fe8bbe11cbda048f525400b21632402972b47c423c1be127"
+            },
+            {
+              "start_line": 3,
+              "end_line": 8,
+              "content_hash": "sha256:2b1919eec8b7ad4f83c44a3311f88ea1542010b544d42372e3cfb413227d41bb"
+            },
+            {
+              "start_line": 20,
+              "end_line": 21,
+              "content_hash": "sha256:e0bcb39452f9845a39ea54b6dee504caa742914119fcd7c1f41241816caaf5d2"
+            },
+            {
+              "start_line": 26,
+              "end_line": 32,
+              "content_hash": "sha256:d4e0d7a7893698a6695c6a411f862daf8c1bfe777ac007a25b939f7ef771b502"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 2,
+              "end_line": 2,
+              "content_hash": "sha256:efb412009ef96ddb5096cd4127424cd1a3078bf8e3ceec7aa9def1736ec833a2"
+            },
+            {
+              "start_line": 9,
+              "end_line": 19,
+              "content_hash": "sha256:b099be73248c723300f59c7624cbadedf957452d374509b0a3b2e3b56f48579d"
+            },
+            {
+              "start_line": 22,
+              "end_line": 25,
+              "content_hash": "sha256:a4dcd1e16474a7a55b8b32525d125b25e00e2ad99ed9d17f6c2900c131a16c92"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/InputComponents.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 423,
+              "content_hash": "sha256:f8b1fde65bd51d1b1a14c689888bb0038dda84b4f311322cb314c1bd98b044c9"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/MethodButton.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 904,
+              "content_hash": "sha256:376ae1999d34fc72f369945504c4aa939bcfac4d1c2a77a83063fc9210b39e52"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/BarChartComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 4,
+              "content_hash": "sha256:656a3a895d4133f49d87780ce7351f2f077270fce5792a92359f3e7c30d0b6d4"
+            },
+            {
+              "start_line": 7,
+              "end_line": 190,
+              "content_hash": "sha256:2b2ed260c5633c992bdc405a1848c639365d5ab1976e74623aa660a723484e12"
+            },
+            {
+              "start_line": 195,
+              "end_line": 216,
+              "content_hash": "sha256:0626b56ed94a8886f220d947cffc5ab3b9b1f0dc48191d47317d5261fcc7b7f1"
+            },
+            {
+              "start_line": 223,
+              "end_line": 228,
+              "content_hash": "sha256:78e4778b9d9816cf5975dfe197002d3bcfe22594f5137d9ee8487bf65b1a7bc6"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 5,
+              "end_line": 6,
+              "content_hash": "sha256:7d9bf7767ba9411edf6315638b6605ca47a0a5cd7f0149ef2868127a22c7cfa6"
+            },
+            {
+              "start_line": 191,
+              "end_line": 194,
+              "content_hash": "sha256:ce5f6e363e5d47b7d0cfb04cf1878e402c4ee4e655fe132507df838e1013f2e1"
+            },
+            {
+              "start_line": 217,
+              "end_line": 222,
+              "content_hash": "sha256:a7d32fcdbe650507cbdb4f9ef93798e87d0393d959088de1b3f7b911ebab95cf"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/LineChartComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 258,
+              "content_hash": "sha256:c39f66094172375edb6952e1ec4bcde3a6d7e10b84e39f428612cd8bb9088ce6"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/MetricCardComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 79,
+              "content_hash": "sha256:812220e00848648f96a3615098317572f92ff29cb31c7b0f7a90ce8dc74ac278"
+            },
+            {
+              "start_line": 81,
+              "end_line": 155,
+              "content_hash": "sha256:e610310914ff2a4d8bea290bf3a0b4bb90ff375a4c12ec85adc5a527693ba8e3"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 80,
+              "end_line": 80,
+              "content_hash": "sha256:db58e1882e120e54323d624cafbece2b500fd148483471496ceab0855482eea1"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/PieChartComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 175,
+              "content_hash": "sha256:da40604336fb71e99632a47df4c30aed4f8511b4864efa140024b2e8b3238422"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/RadarChartComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 174,
+              "content_hash": "sha256:0f0f743eb081c025b8cb8a1e9cfe2399d9151ee721c1a7c4b657758be8b4a20e"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/charts/RadialBarChartComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 136,
+              "content_hash": "sha256:b05e86e531a632dabceca9eecf3cc64973df0820e41c39069ccaf9140665d339"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/ChartBlock.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 317,
+              "content_hash": "sha256:6c82bc8a23e56bfbd2e7c27213259167f83c0a3d1598848ef6833cb66bf12b56"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/CrudButton.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 68,
+              "content_hash": "sha256:51ac5c6c6314d61714a76087b229309605a3a1129be652df82ce3bf5dc626e58"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/DataListBlock.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 51,
+              "content_hash": "sha256:f16e8536af7dfb08444421f0dd9e37d9b6d4dd500d273a61fc22266a53555ad6"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/FormBlock.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 22,
+              "content_hash": "sha256:b787b5273c6d3a96e11129489f66476d40ccc646947b96277506bedad4b566e4"
+            },
+            {
+              "start_line": 24,
+              "end_line": 70,
+              "content_hash": "sha256:cd8624642ee5f975a067a43e1e888cea8af9f5eda399eab46ab6008ac9cf3d0b"
+            },
+            {
+              "start_line": 72,
+              "end_line": 98,
+              "content_hash": "sha256:0264d2243c6d9f444095119d02d25799010440af7e7699e4131686404ef11b4a"
+            },
+            {
+              "start_line": 100,
+              "end_line": 116,
+              "content_hash": "sha256:13955c0e7960eb6820df8c8a7f5aa468e536e68abef9feedcd48856397a1c374"
+            },
+            {
+              "start_line": 118,
+              "end_line": 124,
+              "content_hash": "sha256:eb2902c4d695355fc4c018410af301c0bcf23f66c5c6187e55c8535782213d87"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 23,
+              "end_line": 23,
+              "content_hash": "sha256:a45b9311b7c679c9a51f2d73cc3eaa27f96ca75a8dd5bfcc8f58959288a23930"
+            },
+            {
+              "start_line": 71,
+              "end_line": 71,
+              "content_hash": "sha256:76361e22e99083a0756a940dd4e1c0ea7bb17950bea4db9013201fd253f8f805"
+            },
+            {
+              "start_line": 99,
+              "end_line": 99,
+              "content_hash": "sha256:98d873169ae151bb333b9d91876e137846bc69b58d63dabfe39c75cdea1aeebb"
+            },
+            {
+              "start_line": 117,
+              "end_line": 117,
+              "content_hash": "sha256:083befbc416e43e57eca9970d1361b0545571ca90d8e1e084a258f91ef7a5fdf"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/LookupSelect.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 48,
+              "content_hash": "sha256:523feb8c6856e53f0e29d5a819a77b11a44d582329ac353000d445a84854a418"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/MetricCardBlock.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 75,
+              "content_hash": "sha256:f2b7f0c99b15a5443e473f554a6428b0f4b8b92cf0d0fffe1e55e061893b7cf5"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/TableBlock.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 3,
+              "content_hash": "sha256:c10e5da4e03a55de2970457ac8022a86cee53e79bb68a3e0cbe118972417c0c4"
+            },
+            {
+              "start_line": 5,
+              "end_line": 12,
+              "content_hash": "sha256:a044a8a0e684b016f08198ffec4016993e9b67f08bbcc4564ad5cd01e47568d5"
+            },
+            {
+              "start_line": 14,
+              "end_line": 24,
+              "content_hash": "sha256:ff1b01d63d4db2070be90d34e47e60401865849cc518b0cc184ac89d494a8852"
+            },
+            {
+              "start_line": 26,
+              "end_line": 27,
+              "content_hash": "sha256:bc61ffba1ae7baae226d0d42f2c0daa1de5ad925eeb9a0132b17ef34257e05c1"
+            },
+            {
+              "start_line": 29,
+              "end_line": 81,
+              "content_hash": "sha256:5f74661e864278eef81957f775046d581250e93f29cd24f4ff1fbe9c03d991c0"
+            },
+            {
+              "start_line": 83,
+              "end_line": 83,
+              "content_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "start_line": 86,
+              "end_line": 91,
+              "content_hash": "sha256:33010a157d9f9c1c9448bb5d1f2c4a684d45c8877e3f69b5b1508345b3095219"
+            },
+            {
+              "start_line": 93,
+              "end_line": 99,
+              "content_hash": "sha256:257c019ac619974028afcc02b9f976e42805cf20c45f93614463ee16d4db2851"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 4,
+              "end_line": 4,
+              "content_hash": "sha256:597812099f4ef3aeb3542707f2efe25b1b50b5858c761122df9e7d4c6d9ff4b7"
+            },
+            {
+              "start_line": 13,
+              "end_line": 13,
+              "content_hash": "sha256:0bafabad05298f906bda95a97128cd3480b46df672e46e0fd90d9ef3cf2b460f"
+            },
+            {
+              "start_line": 25,
+              "end_line": 25,
+              "content_hash": "sha256:60f7dd06aa136f26e780ad31ffc476b54bbcf693e699505d48337176eea1d542"
+            },
+            {
+              "start_line": 28,
+              "end_line": 28,
+              "content_hash": "sha256:111e6e08b920c59f2ab0186d76028ea02ed62680f3c17e5ade1db9d894a232a4"
+            },
+            {
+              "start_line": 82,
+              "end_line": 82,
+              "content_hash": "sha256:77a048455ce2cc2ee73038fa44991bb7794f0b06ebfc8772c9aa80c34759f71c"
+            },
+            {
+              "start_line": 84,
+              "end_line": 85,
+              "content_hash": "sha256:4cb46371f924f12a0eed95b9382ab9c09c7fc27e05028c5c58e10a9e827dafe0"
+            },
+            {
+              "start_line": 92,
+              "end_line": 92,
+              "content_hash": "sha256:472b906ebcb529d2728a7ee13865d0c88adc4ed8bbac7b62d050191e4c36bd9d"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/aggregate.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 55,
+              "content_hash": "sha256:d3a6440992c30da1bfae9c85d38ba4afb040cf993d834b034db3b53a297d1677"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/bindingData.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 398,
+              "content_hash": "sha256:582d1ec10967bcbcafac00f09fa0bbb7a42974ad9cc324e0d5e7420acb866324"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/dataVersion.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 23,
+              "content_hash": "sha256:222fc375ce67794d3043ae7e8a96d3a0c6e85fe485bf75536f684cde597f9b8b"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/runtime/lookup.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 47,
+              "content_hash": "sha256:3c05c846ed9714ede5ad67c154d28a0c0e97c96a8a9290ab93d5ab268c515c5f"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/table/ColumnFilter.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 307,
+              "content_hash": "sha256:16f5daed85f49cf766cb6b43a1217e80fc4449e954f34fbdffed2ed89ea7ff96"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/table/ColumnSort.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 41,
+              "content_hash": "sha256:ecb3c72ce4ddcedacbda6ec440e85bc9e75f797b5391da866926cfbbe9a6aff1"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/table/TableComponent.css",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 70,
+              "content_hash": "sha256:8d1a300d78a686babb865636851652b9e52d2701d3fb0fc370221d8c15beadbe"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/components/table/TableComponent.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 62,
+              "content_hash": "sha256:3630b7143ada1064f3622ffd3f4097fad6653231df8b024f8481eb72edf3c415"
+            },
+            {
+              "start_line": 64,
+              "end_line": 122,
+              "content_hash": "sha256:5f6bd0588eb713a9cc08ebd9f48be903946513f89a08c4723ed8eef6f16484cf"
+            },
+            {
+              "start_line": 124,
+              "end_line": 317,
+              "content_hash": "sha256:3fdd0c01664b8317520d3acec28207931e7507e41cbb8b6a4f3d47d20c2ecfa3"
+            },
+            {
+              "start_line": 319,
+              "end_line": 322,
+              "content_hash": "sha256:6fa876fe76227ef54241a35eaee8aafef85377edcb9327fb1c2f6005ca416b0a"
+            },
+            {
+              "start_line": 324,
+              "end_line": 435,
+              "content_hash": "sha256:b9db1be224798d5963d8e7244d5ba506fbbbe66bfe6d8adea3ccb7af8df257f1"
+            },
+            {
+              "start_line": 437,
+              "end_line": 853,
+              "content_hash": "sha256:59becec4128488c85e1a8be5a78d277898eafa8839205e1e16395c82e31a20de"
+            },
+            {
+              "start_line": 855,
+              "end_line": 1780,
+              "content_hash": "sha256:fc3996850888c60cf1df3112dd50e26bc883c1a266b0a0dcbd9efdd258ae0623"
+            },
+            {
+              "start_line": 1782,
+              "end_line": 1799,
+              "content_hash": "sha256:83c94d21f8038564b3f322f081f553fed4fe4bd95fbf268039d6b1b8db3354ee"
+            },
+            {
+              "start_line": 1802,
+              "end_line": 1882,
+              "content_hash": "sha256:a69c6a9ceb281ea9d2f2a398f264a9676beaf32927dde872543168ab2b247f0a"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 63,
+              "end_line": 63,
+              "content_hash": "sha256:55a8ccd53506f9012cb6d280ead07c485f1606f9187dc50eb8fac47b97f1d9e6"
+            },
+            {
+              "start_line": 123,
+              "end_line": 123,
+              "content_hash": "sha256:6d7022ae92e8a725f16edb1a40e8d0dc581e4da182fcf2ac24ff998c42bf98d6"
+            },
+            {
+              "start_line": 318,
+              "end_line": 318,
+              "content_hash": "sha256:03e0c9249bca557a9c1eae877f1188a7431c6c2895755c14c1e35cc10e853bfe"
+            },
+            {
+              "start_line": 323,
+              "end_line": 323,
+              "content_hash": "sha256:6fddd00800c555576e49e5a78bab3e83fea5f3ee7aa09cfe244e08d6fd6bd746"
+            },
+            {
+              "start_line": 436,
+              "end_line": 436,
+              "content_hash": "sha256:273824c143d1ce080b2eb443e2d9b2d16a8fa4379371cd077aa7a8eb9361ccae"
+            },
+            {
+              "start_line": 854,
+              "end_line": 854,
+              "content_hash": "sha256:8be68f34b9fd1998e8b6a1f44f91f781f35b2a042c16af9d54249bd0b71f13e4"
+            },
+            {
+              "start_line": 1781,
+              "end_line": 1781,
+              "content_hash": "sha256:17c84149ce38765f31a8093717461823826a5cb322668eff246d71fda103e53e"
+            },
+            {
+              "start_line": 1800,
+              "end_line": 1801,
+              "content_hash": "sha256:c14b42f2eee4346f61963feeda9dc5db341c4309e37f66ca6f0613f85633f695"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/contexts/TableContext.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 111,
+              "content_hash": "sha256:c8a23b27f0308afbfa87d5916c9dcac1cebfd3dc73ad4a759ca4f2170c3002d1"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/design-overrides.css",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 23,
+              "content_hash": "sha256:79eceb02d5e9aa2cb576f155b48e5a20cfdd087b78d0ad234eecd50eebdc6d48"
+            },
+            {
+              "start_line": 27,
+              "end_line": 47,
+              "content_hash": "sha256:477ac34162ff530e36231c86296e50b5269cb67818bfbf8d9e0b7072b36bb186"
+            },
+            {
+              "start_line": 49,
+              "end_line": 73,
+              "content_hash": "sha256:14fc3fcdcf3ccdf19dfbb44a86de7a9bc0302afce8e739edd6776759befa0204"
+            },
+            {
+              "start_line": 76,
+              "end_line": 76,
+              "content_hash": "sha256:e596f3743ae11f5374fb9d20efb3a9e9c4ec35454cb2ff371be7d1414d89d5fd"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 24,
+              "end_line": 26,
+              "content_hash": "sha256:bb4338f8967898edd65698a651b850d550bc122758ae3e9d3c2430905675695c"
+            },
+            {
+              "start_line": 48,
+              "end_line": 48,
+              "content_hash": "sha256:ca2411c2d0a2ef0c53c6fa1f78106fb984e726f314a74976c9e38a7c540cab36"
+            },
+            {
+              "start_line": 74,
+              "end_line": 75,
+              "content_hash": "sha256:3a6ee48915747ca2b923c606f6550170bffeb09be34269d77619e720e4dbc32c"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/design.css",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 55,
+              "content_hash": "sha256:1c39c5c78ade1d50d800bc6ff8a8e5ae20558b11c630addc3d74c2798fa7476c"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/index.css",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 7,
+              "content_hash": "sha256:688169927af849b93fd20b79a28c3445816bbec502c99ddac270bcd6e9538682"
+            },
+            {
+              "start_line": 9,
+              "end_line": 16,
+              "content_hash": "sha256:9e23d0599b44827dab842ddc9104b9eb80d089f9731b2745fa6fa8034d03da06"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 8,
+              "end_line": 8,
+              "content_hash": "sha256:10453f406b0f6b14f7089f60757faf2a59a777df943dcafcbb3a78189454eae0"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/index.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 6,
+              "content_hash": "sha256:afdcffddd335a10c57261b619b88a563001506d6fe0961e8dc76c45d15610320"
+            },
+            {
+              "start_line": 8,
+              "end_line": 18,
+              "content_hash": "sha256:b24b3965391ff7108a65ca386ad7f03068621df5ece0d6563b038847689aed3a"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 7,
+              "end_line": 7,
+              "content_hash": "sha256:ed419f44a965d8877ed302f455858c5b36c9f59cda26776b21106bf9827ff5f8"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/pages/Recommendation.tsx",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 3,
+              "content_hash": "sha256:2681626073f0fb3cf42ddb13d568d3d6b1592f3977884fca94e4d399769b311d"
+            },
+            {
+              "start_line": 5,
+              "end_line": 8,
+              "content_hash": "sha256:8ebdb5ea505b00828fd94fb607d1b6a4514e4a87be3a222708160f8d248c4a0c"
+            },
+            {
+              "start_line": 10,
+              "end_line": 54,
+              "content_hash": "sha256:ff039eea98e19f0399b87a668c56be65be93bc8c547316cc691ebc34638c9f6b"
+            },
+            {
+              "start_line": 56,
+              "end_line": 60,
+              "content_hash": "sha256:f196c149c13ea9749befd24848653d331260f065cd984d1b1c4451a1b2f04713"
+            },
+            {
+              "start_line": 62,
+              "end_line": 62,
+              "content_hash": "sha256:42c1a542400b606aff95a1bbf69b1b33b57b8db724e1038be54f7b27210cc287"
+            },
+            {
+              "start_line": 64,
+              "end_line": 113,
+              "content_hash": "sha256:fee172a8d04ea207f1cbf03465e983517d6ad38cc1745bf26629499af98910e5"
+            },
+            {
+              "start_line": 118,
+              "end_line": 118,
+              "content_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:715977fd342040a991fe620cf9760ca4"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 4,
+              "end_line": 4,
+              "content_hash": "sha256:a16be281515de8c3f42afa7bd6ccbbbcf31cad6c50ae91adf0d9e69717749751"
+            },
+            {
+              "start_line": 9,
+              "end_line": 9,
+              "content_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "start_line": 55,
+              "end_line": 55,
+              "content_hash": "sha256:bbb74f83353ebcbef2629234fc4e06d43881e68a787792224d87addf654ddef6"
+            },
+            {
+              "start_line": 63,
+              "end_line": 63,
+              "content_hash": "sha256:f384a560ae4d5337eccc7844047383cd9b8afad74c35d65301676e6773de3fe9"
+            },
+            {
+              "start_line": 114,
+              "end_line": 117,
+              "content_hash": "sha256:93f2206ec9374824845439dcf13aab1c8c11e9f9c9887ed97743af5c5fdc92a7"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        },
+        {
+          "contributor": {
+            "type": "ai",
+            "model_id": "openai/gpt-6-sol"
+          },
+          "ranges": [
+            {
+              "start_line": 61,
+              "end_line": 61,
+              "content_hash": "sha256:2028443734914671a28d5c577e204036b54213b40e4c14c26922d7072a1693d0"
+            }
+          ],
+          "related": [
+            {
+              "type": "session",
+              "url": "urn:besser:run:c53887fe1ccf454bbab5397a66e971d5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/src/react-app-env.d.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 9,
+              "content_hash": "sha256:fd0952353637e6a2d34aa53c167f5fc0f5968bec87eae6c9a0870715882f8b9d"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/tsconfig.json",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 29,
+              "content_hash": "sha256:4b89e13060d4c38e47802e571d1c98729de0dc8806c3a4a8ef10e505270fcc1b"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "web_app/frontend/vite.config.ts",
+      "conversations": [
+        {
+          "contributor": {
+            "type": "unknown"
+          },
+          "ranges": [
+            {
+              "start_line": 1,
+              "end_line": 14,
+              "content_hash": "sha256:f5af9e4652479e7acb2779ddc180fd386e57e912e90659793955467a5239e353"
+            }
+          ],
+          "related": [
+            {
+              "type": "generator",
+              "url": "urn:besser:generator:web_app@8.10.1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "org.besser-pearl": {
+      "run_id": "c53887fe1ccf454bbab5397a66e971d5",
+      "lines": {
+        "generator": 7235,
+        "ai": 3502,
+        "human": 0,
+        "unknown": 0
+      },
+      "base_generator": "generate_web_app",
+      "model_id": "openai/gpt-6-sol"
+    }
+  }
+}

@@ -80,7 +80,9 @@ class RecommendationStatus(enum.Enum):
 # Tables definition
 class Recommendation(Base):
     __tablename__ = "recommendation"
-    id: Mapped_[int] = mapped_column(primary_key=True)
+    # The primary key is persistence infrastructure, not a declared domain attribute.
+    __table_args__ = (Column_("id", Integer_, primary_key=True),)
+    id = __table_args__[0]
     title: Mapped_[str] = mapped_column(String_(100))
     category: Mapped_[RecommendationCategory] = mapped_column(Enum(RecommendationCategory))
     status: Mapped_[RecommendationStatus] = mapped_column(Enum(RecommendationStatus))
