@@ -1,2 +1,16 @@
-# recommendationstracker
-A simple web app to keep all the recommendations in one place, organised by type (books, films, places, podcasts and more). Built with BESSER.
+# New_Project
+
+New project with all diagram types
+
+Created with [BESSER](https://github.com/BESSER-PEARL/BESSER) on 2026-11-20.
+
+## Files
+
+- `buml/diagrams.json`: the model. Open the repository from the GitHub panel of the
+  [BESSER Web Editor](https://editor.besser-pearl.org/) to edit it.
+- `buml/*.py`: the same model as B-UML Python source.
+
+## Learn more
+
+- [BESSER on GitHub](https://github.com/BESSER-PEARL/BESSER)
+- [Documentation](https://besser.readthedocs.io/)
