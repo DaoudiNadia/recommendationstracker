@@ -52,7 +52,7 @@ Recommendation.attributes={Recommendation_added_on, Recommendation_category, Rec
 
 # Domain Model
 domain_model = DomainModel(
-    name="Hotel",
+    name="RecommendationsTracker",
     types={Recommendation, RecommendationCategory, RecommendationStatus},
     associations=set(),
     generalizations=set(),

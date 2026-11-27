@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 ############################################
 
 def init_db():
-    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/Hotel.db")
+    SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/RecommendationsTracker.db")
     # check_same_thread is a SQLite-only argument; do not pass it to other drivers
     connect_args = {"check_same_thread": False} if SQLALCHEMY_DATABASE_URL.startswith("sqlite") else {}
     if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):

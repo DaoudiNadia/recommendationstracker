@@ -21,7 +21,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=sqlite:///./data/Hotel.db
+      - DATABASE_URL=sqlite:///./data/RecommendationsTracker.db
     volumes:
       - sqlite_data:/app/data
 

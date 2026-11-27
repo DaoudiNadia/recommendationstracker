@@ -94,7 +94,7 @@ class Recommendation(Base):
 
 
 # Database connection (override the default with the DATABASE_URL environment variable)
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/Hotel.db")  # SQLite connection
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/RecommendationsTracker.db")  # SQLite connection
 engine = create_engine(DATABASE_URL)
 _configure_sqlite_engine(engine)
 

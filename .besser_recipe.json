@@ -97,7 +97,7 @@
   ],
   "model": {
     "primary_kind": "class",
-    "name": "Hotel",
+    "name": "RecommendationsTracker",
     "classes": [
       "Recommendation"
     ],
